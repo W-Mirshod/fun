@@ -1,7 +1,5 @@
 import smtplib
 
-
-
 # from email.mime.text import MIMEText
 
 # sender = 'admin@example.com'
@@ -23,5 +21,3 @@ import smtplib
 # server.sendmail(sender, receivers, msg.as_string())
 
 # print("Successfully sent email")
-
-
