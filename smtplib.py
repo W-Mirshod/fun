@@ -1,6 +1,5 @@
 import smtplib
 
-
 # from email.mime.text import MIMEText
 
 
@@ -32,4 +31,3 @@ import smtplib
 
 
 # print("Successfully sent email")
-
