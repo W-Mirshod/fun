@@ -15,6 +15,7 @@ import smtplib
 
 # msg = MIMEText('This is test mail')
 
+
 # msg['Subject'] = 'Test mail'
 
 # msg['From'] = 'admin@example.com'
