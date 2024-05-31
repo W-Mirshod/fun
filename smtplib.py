@@ -6,6 +6,7 @@ import smtplib
 
 # sender = 'admin@example.com'
 
+
 # receivers = ['info@example.com']
 
 # port = 1025
