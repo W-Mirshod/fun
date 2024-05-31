@@ -24,6 +24,7 @@ import smtplib
 
 # msg['To'] = 'info@example.com'
 
+
 # with smtplib.SMTP('localhost', port) as server:
 
 # server.sendmail(sender, receivers, msg.as_string())
