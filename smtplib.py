@@ -17,7 +17,6 @@ import smtplib
 
 # msg['Subject'] = 'Test mail'
 
-
 # msg['From'] = 'admin@example.com'
 
 # msg['To'] = 'info@example.com'
