@@ -6,7 +6,6 @@ import smtplib
 # msg = MIMEText('This is test mail')
 # msg['Subject'] = 'Test mail'
 # msg['From'] = 'admin@example.com'
-
 # msg['To'] = 'info@example.com'
 
 # with smtplib.SMTP('localhost', port) as server:
