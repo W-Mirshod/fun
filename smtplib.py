@@ -4,7 +4,6 @@ import smtplib
 # receivers = ['info@example.com']
 # port = 1025
 # msg = MIMEText('This is test mail')
-
 # msg['Subject'] = 'Test mail'
 
 # msg['From'] = 'admin@example.com'
