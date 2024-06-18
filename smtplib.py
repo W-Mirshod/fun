@@ -2,6 +2,7 @@ import smtplib
 
 
 # from email.mime.text import MIMEText
+
 # sender = 'admin@example.com'
 # receivers = ['info@example.com']
 # port = 1025
