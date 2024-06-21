@@ -24,7 +24,7 @@
         .nav-wrapper {
             display: flex;
             flex-direction: column; /* Ensure vertical layout */
-            gap: 1rem;
+            gap: 0rem;
             padding: 1rem; /* Add padding for better spacing */
             width: 100%;
             max-width: 600px; /* Optional: limit max width */
@@ -43,11 +43,12 @@
         /* Media query for phones and smaller screens */
         @media (max-width: 600px) {
             .nav-wrapper {
-                padding: 1rem; /* Adjust padding */
+                padding: 0.9rem; /* Adjust padding */
+                gap: 0rem;
             }
 
             a {
-                font-size: 1rem; /* Adjust font size for smaller screens */
+                font-size: 2rem; /* Adjust font size for smaller screens */
             }
         }
     </style>
@@ -55,6 +56,9 @@
 
 <body>
 
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -85,10 +89,7 @@
         <span></span>
         <span></span>
         2. Just Calming✨
-        <pre>Press the
-grids and
-build your
-house)</pre>
+        <pre>Press the grids and build your house)</pre>
     </a>
 
     <a href="{% url 'blooming' %}">
