@@ -10,76 +10,76 @@
     <link rel="icon" type="image/x-icon"
           href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
-    /* Base styles for all screens */
-    nav {
-        display: flex;
-        flex-wrap: nowrap; /* Prevent wrapping to keep items in a single row */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-        gap: 1rem; /* Add spacing between items */
-    }
-
-    /* Media query for phones and smaller screens */
-    @media (max-width: 600px) {
-        nav {
-            display: flex; /* Ensure flex layout on small screens */
-            flex-direction: row; /* Keep items in a row */
-            overflow-x: auto; /* Allow horizontal scrolling if needed */
-        }
-
+        /* Base styles for all screens */
         body {
-            padding: 1rem; /* Add padding for better spacing */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-    }
-</style>
 
+        .nav-wrapper {
+            display: flex;
+            flex-direction: column; /* Ensure vertical layout */
+            gap: 1rem;
+        }
+
+        /* Media query for phones and smaller screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem; /* Add padding for better spacing */
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div class="nav-wrapper">
+        <a href="{% url 'orange' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Instruction
+            <h6>Better to read this firstly</h6>
+        </a>
 
-<a href="{% url 'orange' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Instruction
-    <h6>Better to read this firstly</h6>
-</a>
+        <a href="{% url 'solar' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            1. Solar System🌃
+        </a>
 
-<a href="{% url 'solar' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    1. Solar System🌃
-</a>
-
-<a href="{% url 'calming' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    2. Just Calming✨
-    <pre>Press the
+        <a href="{% url 'calming' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            2. Just Calming✨
+            <pre>Press the
 grids and
 build your
 house)</pre>
-</a>
+        </a>
 
-<a href="{% url 'blooming' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    3. Wanna see smth :)
-</a>
+        <a href="{% url 'blooming' %}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            3. Wanna see smth :)
+        </a>
 
-<a href="https://t.me/maverick3526">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    4. Back to the Chat in Tg↩️
-</a>
-
+        <a href="https://t.me/maverick3526">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            4. Back to the Chat in Tg↩️
+        </a>
+    </div>
 </body>
 </html>
