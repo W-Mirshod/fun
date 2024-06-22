@@ -18,29 +18,12 @@
         gap: 1rem; /* Add spacing between items */
     }
 
-    a {
-        font-size: 1vw; /* Adjust font size as needed for larger screens */
-        white-space: nowrap; /* Prevent text wrapping */
-        text-decoration: none; /* Remove underline */
-        color: inherit; /* Inherit color from parent */
-        transition: filter 0.3s ease; /* Smooth transition for hue-rotate effect */
-        filter: hue-rotate(90deg); /* Adjust as needed */
-    }
-
     /* Media query for phones and smaller screens */
     @media (max-width: 600px) {
         nav {
             display: flex; /* Ensure flex layout on small screens */
             flex-direction: row; /* Keep items in a row */
             overflow-x: auto; /* Allow horizontal scrolling if needed */
-        }
-
-        a {
-            font-size: 4vw; /* Adjust font size to be more readable on phones */
-            margin-right: 1rem; /* Keep horizontal spacing */
-            margin-bottom: 0; /* Remove vertical spacing if stacking in a row */
-            display: inline-block; /* Ensure links are displayed in a row */
-            filter: hue-rotate(90deg); /* Ensure hue-rotate is applied on phones */
         }
 
         body {
