@@ -1,84 +1,102 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choices For Orange</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+    <link rel="icon" type="image/x-icon"
+          href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
-        /* Base styles for all screens */
+    /* Base styles for all screens */
+    nav {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping to keep items in a single row */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        gap: 1rem; /* Add spacing between items */
+    }
+
+    a {
+        font-size: 1vw; /* Adjust font size as needed for larger screens */
+        white-space: nowrap; /* Prevent text wrapping */
+        text-decoration: none; /* Remove underline */
+        color: inherit; /* Inherit color from parent */
+        transition: filter 0.3s ease; /* Smooth transition for hue-rotate effect */
+        filter: hue-rotate(90deg); /* Adjust as needed */
+    }
+
+    /* Media query for phones and smaller screens */
+    @media (max-width: 600px) {
         nav {
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping */
-            gap: 1rem; /* Add spacing between items */
+            display: flex; /* Ensure flex layout on small screens */
+            flex-direction: row; /* Keep items in a row */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
         }
 
         a {
-            font-size: 1vw; /* Adjust font size as needed */
-            display: inline-block; /* Ensure items are in a row */
-            text-decoration: none; /* Remove underline */
+            font-size: 4vw; /* Adjust font size to be more readable on phones */
+            margin-right: 1rem; /* Keep horizontal spacing */
+            margin-bottom: 0; /* Remove vertical spacing if stacking in a row */
+            display: inline-block; /* Ensure links are displayed in a row */
+            filter: hue-rotate(90deg); /* Ensure hue-rotate is applied on phones */
         }
 
-        /* Media query to adjust font size for smaller screens */
-        @media (max-width: 600px) {
-            a {
-                font-size: 4vw; /* Adjust font size for readability on small screens */
-            }
+        body {
+            padding: 1rem; /* Add padding for better spacing */
         }
-    </style>
+    }
+</style>
+
 </head>
 
 <body>
 
-<nav>
-    <a href="{% url 'orange' %}">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        Instruction
-        <h6>Better to read this firstly</h6>
-    </a>
+<a href="{% url 'orange' %}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Instruction
+    <h6>Better to read this firstly</h6>
+</a>
 
-    <a href="{% url 'solar' %}">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        1. Solar System🌃
-    </a>
+<a href="{% url 'solar' %}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    1. Solar System🌃
+</a>
 
-    <a href="{% url 'calming' %}">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        2. Just Calming✨
-        <pre>Press the
+<a href="{% url 'calming' %}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    2. Just Calming✨
+    <pre>Press the
 grids and
 build your
 house)</pre>
-    </a>
+</a>
 
-    <a href="{% url 'blooming' %}">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        3. Wanna see smth :)
-    </a>
+<a href="{% url 'blooming' %}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    3. Wanna see smth :)
+</a>
 
-    <a href="https://t.me/maverick3526">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        4. Back to the Chat in Tg↩️
-    </a>
-</nav>
+<a href="https://t.me/maverick3526">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    4. Back to the Chat in Tg↩️
+</a>
 
 </body>
 </html>
