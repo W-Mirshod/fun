@@ -3,7 +3,6 @@
 # from email.mime.text import MIMEText
 # sender = 'admin@example.com'
 # receivers = ['info@example.com']
-
 # port = 1025
 # msg = MIMEText('This is test mail')
 # msg['Subject'] = 'Test mail'
