@@ -6,7 +6,6 @@
 
 
 # port = 1025
-
 # msg = MIMEText('This is test mail')
 
 # msg['Subject'] = 'Test mail'
