@@ -6,6 +6,7 @@
 
 # receivers = ['info@example.com']
 
+
 # port = 1025
 
 # msg = MIMEText('This is test mail')
