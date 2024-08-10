@@ -1,35 +1,38 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>CodePen -  Button CSS _каркас</title>
-  <link rel="stylesheet" href="../../style.css">
+{% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choices</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-<!-- partial:index.partial.html -->
+
+<a href="{% url 'blooming' %}">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Wanna see smth :)
+</a>
+
 <a href="#">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		Glowing button
-	</a>
-	<a href="#">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		Glowing button
-	</a>
-	<a href="#">
-		<span></span>
-		<span></span>
-		<span></span>
-		<span></span>
-		Glowing button
-	</a>
-<!-- partial -->
-  
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Glowing button
+</a>
+
+<a href="#">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Glowing button
+</a>
+
 </body>
 </html>
