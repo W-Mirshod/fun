@@ -5,3 +5,8 @@ from django.shortcuts import render
 class MainPage(View):
     def get(self, request):
         return render(request, 'main.html')
+
+
+class BloomingFlowersPage(View):
+    def get(self, request):
+        return render(request, 'blooming.html')
