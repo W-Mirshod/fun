@@ -1,18 +1,29 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choices For Orange</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/x-icon"
           href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+    <style>
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        a {
+            font-size: 1vw; /* Adjust as needed */
+            margin-right: 1rem; /* Add some spacing */
+        }
+    </style>
+
 </head>
 
 <body>
-
 
 <a href="{% url 'orange' %}">
     <span></span>
@@ -23,7 +34,6 @@
     <h6>Better to read this firstly</h6>
 </a>
 
-
 <a href="{% url 'solar' %}">
     <span></span>
     <span></span>
@@ -31,7 +41,6 @@
     <span></span>
     1. Solar System🌃
 </a>
-
 
 <a href="{% url 'calming' %}">
     <span></span>
@@ -45,7 +54,6 @@ build your
 house)</pre>
 </a>
 
-
 <a href="{% url 'blooming' %}">
     <span></span>
     <span></span>
@@ -54,15 +62,13 @@ house)</pre>
     3. Wanna see smth :)
 </a>
 
-<div>
-    <a href="https://t.me/maverick3526">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        4. Back to the Chat in Tg↩️
-    </a>
-</div>
+<a href="https://t.me/maverick3526">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    4. Back to the Chat in Tg↩️
+</a>
 
 </body>
 </html>
