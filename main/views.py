@@ -25,3 +25,8 @@ class CalmingHomePage(View):
 class SolarSystemPage(View):
     def get(self, request):
         return render(request, 'universe_index.html')
+
+
+class OrangePage(View):
+    def get(self, request):
+        return render(request, 'orange_style.html')
