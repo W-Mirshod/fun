@@ -1,74 +1,90 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choices For Orange</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="icon" type="image/x-icon"
-          href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
         nav {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column; /* Stack items vertically */
+            padding: 1rem;
         }
 
         a {
-            font-size: 1vw; /* Adjust as needed */
-            margin-right: 1rem; /* Add some spacing */
+            font-size: 1rem; /* Base font size */
+            margin-bottom: 5rem; /* Spacing between links */
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Inherit color from parent */
+            display: block; /* Make links block-level */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            a {
+                font-size: 0.875rem; /* Smaller font size on small screens */
+            }
         }
     </style>
-
 </head>
-
 <body>
 
-<a href="{% url 'orange' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    Instruction
-    <h6>Better to read this firstly</h6>
-</a>
+<nav>
+    <a href="{% url 'orange' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Instruction
+        <h6>Better to read this firstly</h6>
+    </a>
 
-<a href="{% url 'solar' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    1. Solar System🌃
-</a>
+    <a href="{% url 'solar' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        1. Solar System🌃
+    </a>
 
-<a href="{% url 'calming' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    2. Just Calming✨
-    <pre>Press the
+    <a href="{% url 'calming' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        2. Just Calming✨
+        <pre>Press the
 grids and
 build your
 house)</pre>
-</a>
+    </a>
 
-<a href="{% url 'blooming' %}">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    3. Wanna see smth :)
-</a>
+    <a href="{% url 'blooming' %}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        3. Wanna see smth :)
+    </a>
 
-<a href="https://t.me/maverick3526">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    4. Back to the Chat in Tg↩️
-</a>
+    <a href="https://t.me/maverick3526">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        4. Back to the Chat in Tg↩️
+    </a>
+</nav>
 
 </body>
 </html>
