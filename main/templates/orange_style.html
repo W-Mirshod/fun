@@ -1,11 +1,14 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Torn paper photo gallery</title>
-  <link rel="stylesheet" href="{% static 'css/orange_style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <link rel="stylesheet" href="{% static 'css/orange_style.css' %}">
+    <link rel="icon" type="image/x-icon"
+          href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
 
 </head>
 <body>
@@ -25,23 +28,27 @@ https://github.com/happy358/TornPaper
 <main>
     <div id="gallery">
 
-        <article class="card" style="--img:url('https://i.pinimg.com/564x/68/07/6e/68076e6a34e040275afc7ef113a170b4.jpg');">
+        <article class="card"
+                 style="--img:url('https://i.pinimg.com/564x/68/07/6e/68076e6a34e040275afc7ef113a170b4.jpg');">
             <h2>1st Choice</h2>
             <p>U can watch our Solar System with some informationa about 'em</p>
         </article>
 
-        <article class="card" style="--img:url('https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTgzMjc2NTB8&ixlib=rb-4.0.3&q=85');">
+        <article class="card"
+                 style="--img:url('https://images.unsplash.com/photo-1592187270271-9a4b84faa228?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MTgzMjc2NTB8&ixlib=rb-4.0.3&q=85');">
             <h2>2nd Choice</h2>
             <p>You can build house by just pressing different grids in the screen</p>
             <h6>It's not about building or house, just calming view)</h6>
         </article>
 
-        <article class="card" style="--img:url('https://i.pinimg.com/564x/55/7a/4d/557a4d19be76164175d2b052a1d29a2d.jpg');">
+        <article class="card"
+                 style="--img:url('https://i.pinimg.com/564x/55/7a/4d/557a4d19be76164175d2b052a1d29a2d.jpg');">
             <h2>3rd Choice</h2>
             <p>Just Smth Interesting :)</p>
         </article>
 
-        <article class="card" style="--img:url('https://i.pinimg.com/564x/e3/87/00/e3870060eb8db083884ce41b45479def.jpg');">
+        <article class="card"
+                 style="--img:url('https://i.pinimg.com/564x/e3/87/00/e3870060eb8db083884ce41b45479def.jpg');">
             <h2>4th Choice</h2>
             <p>Back to chatting again</p>
         </article>
@@ -52,7 +59,7 @@ https://github.com/happy358/TornPaper
     <p><a target="_blank" href="{% url 'choices' %}">Back To The Choices' Page</a></p>
 </footer>
 <!-- partial -->
-  <script  src="{% static 'js/orange_style.js' %}"></script>
+<script src="{% static 'js/orange_style.js' %}"></script>
 
 </body>
 </html>
