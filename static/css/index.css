@@ -411,7 +411,7 @@ button {
 .light {
       width: 200px;
     height: 0px;
-    border-bottom: 900px solid rgb(44 255 255 / 24%);
+    border-bottom: 1350px solid rgb(44 255 255 / 24%);
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     position: absolute;
@@ -434,7 +434,7 @@ button {
   overflow: hidden;
   max-height: 100vh;
 }
-@media (max-width: 1400px) { 
+@media (max-width: 1400px) {
   .lamp {
     zoom: .5;
   }
