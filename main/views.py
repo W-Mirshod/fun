@@ -2,7 +2,7 @@ from django.views import View
 from django.shortcuts import render
 
 
-class HomeView(View):
+class HomePage(View):
     def get(self, request):
         return render(request, 'index.html')
 
@@ -15,3 +15,13 @@ class ChoicesPage(View):
 class BloomingFlowersPage(View):
     def get(self, request):
         return render(request, 'blooming.html')
+
+
+class CalmingHomePage(View):
+    def get(self, request):
+        return render(request, 'calming_style.html')
+
+
+class SolarSystemPage(View):
+    def get(self, request):
+        return render(request, 'universe_index.html')
