@@ -5,34 +5,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choices For Orange</title>
+    <title>Responsive Layout</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
+        /* Base styles for larger screens (horizontal layout) */
         nav {
             display: flex;
-            flex-direction: column; /* Stack items vertically */
-            padding: 1rem;
+            flex-direction: row; /* Horizontal layout */
+            flex-wrap: wrap; /* Allow wrapping */
         }
 
         a {
             font-size: 1rem; /* Base font size */
-            margin-bottom: 5rem; /* Spacing between links */
+            margin-right: 1rem; /* Space between items */
             text-decoration: none; /* Remove underline */
-            color: inherit; /* Inherit color from parent */
-            display: block; /* Make links block-level */
+            color: inherit; /* Inherit color */
         }
 
-        /* Responsive adjustments */
+        /* Responsive styles for smaller screens (vertical layout) */
         @media (max-width: 600px) {
+            nav {
+                flex-direction: column; /* Vertical layout */
+            }
+
             a {
-                font-size: 0.875rem; /* Smaller font size on small screens */
+                margin-right: 0; /* Remove horizontal spacing */
+                margin-bottom: 1rem; /* Vertical spacing */
             }
         }
     </style>
