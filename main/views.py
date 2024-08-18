@@ -30,3 +30,8 @@ class SolarSystemPage(View):
 class OrangePage(View):
     def get(self, request):
         return render(request, 'orange_style.html')
+
+
+class FireFlyPage(View):
+    def get(self, request):
+        return render(request, 'firefly_style.html')

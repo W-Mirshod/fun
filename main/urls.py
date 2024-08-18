@@ -1,5 +1,6 @@
 from django.urls import path
-from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, OrangePage
+from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, OrangePage, \
+    FireFlyPage
 
 urlpatterns = [
     path('', HomePage.as_view(), name='index'),
@@ -8,4 +9,5 @@ urlpatterns = [
     path('calming-view', CalmingHomePage.as_view(), name='calming'),
     path('solar-system', SolarSystemPage.as_view(), name='solar'),
     path('orange', OrangePage.as_view(), name='orange'),
+    path('firefly/', FireFlyPage.as_view(), name='firefly'),
 ]

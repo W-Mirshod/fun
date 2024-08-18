@@ -1,0 +1,335 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Firefly</title>
+    <link rel="stylesheet" href="{% static 'css/firefly_style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+{#<div id="fireflies">#}
+{#    <div class="" id="f-0" style="left: 117px; top: 8px;"></div>#}
+{#    <div class="" id="f-1" style="left: 113px; top: 20px;"></div>#}
+{#    <div class="" id="f-2" style="left: 105px; top: 33px;"></div>#}
+{#    <div class="" id="f-3" style="left: 104px; top: 46px;"></div>#}
+{#    <div class="" id="f-4" style="left: 99px; top: 59px;"></div>#}
+{#    <div class="" id="f-5" style="left: 95px; top: 74px;"></div>#}
+{#    <div class="" id="f-6" style="left: 116px; top: 42px;"></div>#}
+{#    <div class="" id="f-7" style="left: 129px; top: 42px;"></div>#}
+{#    <div class="" id="f-8" style="left: 116px; top: 7px;"></div>#}
+{#    <div class="" id="f-9" style="left: 122px; top: -1px;"></div>#}
+{#    <div class="" id="f-10" style="left: 126px; top: 7px;"></div>#}
+{#    <div class="" id="f-11" style="left: 131px; top: 20px;"></div>#}
+{#    <div class="" id="f-12" style="left: 135px; top: 33px;"></div>#}
+{#    <div class="" id="f-13" style="left: 137px; top: 44px;"></div>#}
+{#    <div class="" id="f-14" style="left: 137px; top: 44px;"></div>#}
+{#    <div class="" id="f-15" style="left: 137px; top: 56px;"></div>#}
+{#    <div class="" id="f-16" style="left: 138px; top: 67px;"></div>#}
+{#    <div class="" id="f-17" style="left: 139px; top: 76px;"></div>#}
+{#    <div class="" id="f-18" style="left: 162px; top: 83px;"></div>#}
+{#    <div class="" id="f-19" style="left: 190px; top: 17px;"></div>#}
+{#    <div class="" id="f-20" style="left: 184px; top: 9px;"></div>#}
+{#    <div class="" id="f-21" style="left: 180px; top: 20px;"></div>#}
+{#    <div class="" id="f-22" style="left: 176px; top: 32px;"></div>#}
+{#    <div class="" id="f-23" style="left: 172px; top: 46px;"></div>#}
+{#    <div class="" id="f-24" style="left: 168px; top: 58px;"></div>#}
+{#    <div class="" id="f-25" style="left: 166px; top: 71px;"></div>#}
+{#    <div class="" id="f-26" style="left: 189px; top: 17px;"></div>#}
+{#    <div class="" id="f-27" style="left: 194px; top: 26px;"></div>#}
+{#    <div class="" id="f-28" style="left: 200px; top: 38px;"></div>#}
+{#    <div class="" id="f-29" style="left: 204px; top: 49px;"></div>#}
+{#    <div class="" id="f-30" style="left: 206px; top: 60px;"></div>#}
+{#    <div class="" id="f-31" style="left: 207px; top: 70px;"></div>#}
+{#    <div class="" id="f-32" style="left: 207px; top: 77px;"></div>#}
+{#    <div class="" id="f-33" style="left: 208px; top: 85px;"></div>#}
+{#    <div class="" id="f-34" style="left: 184px; top: 51px;"></div>#}
+{#    <div class="" id="f-35" style="left: 194px; top: 52px;"></div>#}
+{#    <div class="" id="f-36" style="left: 229px; top: 12px;"></div>#}
+{#    <div class="" id="f-37" style="left: 230px; top: 23px;"></div>#}
+{#    <div class="" id="f-38" style="left: 232px; top: 36px;"></div>#}
+{#    <div class="" id="f-39" style="left: 233px; top: 46px;"></div>#}
+{#    <div class="" id="f-40" style="left: 236px; top: 57px;"></div>#}
+{#    <div class="" id="f-41" style="left: 236px; top: 68px;"></div>#}
+{#    <div class="" id="f-42" style="left: 234px; top: 79px;"></div>#}
+{#    <div class="" id="f-43" style="left: 241px; top: 17px;"></div>#}
+{#    <div class="" id="f-44" style="left: 249px; top: 26px;"></div>#}
+{#    <div class="" id="f-45" style="left: 254px; top: 37px;"></div>#}
+{#    <div class="" id="f-46" style="left: 260px; top: 27px;"></div>#}
+{#    <div class="" id="f-47" style="left: 265px; top: 14px;"></div>#}
+{#    <div class="" id="f-48" style="left: 270px; top: 5px;"></div>#}
+{#    <div class="" id="f-49" style="left: 273px; top: 14px;"></div>#}
+{#    <div class="" id="f-50" style="left: 273px; top: 22px;"></div>#}
+{#    <div class="" id="f-51" style="left: 275px; top: 32px;"></div>#}
+{#    <div class="" id="f-52" style="left: 275px; top: 43px;"></div>#}
+{#    <div class="" id="f-53" style="left: 275px; top: 54px;"></div>#}
+{#    <div class="" id="f-54" style="left: 275px; top: 63px;"></div>#}
+{#    <div class="" id="f-55" style="left: 275px; top: 70px;"></div>#}
+{#    <div class="" id="f-56" style="left: 275px; top: 77px;"></div>#}
+{#    <div class="" id="f-57" style="left: 299px; top: 67px;"></div>#}
+{#    <div class="" id="f-58" style="left: 295px; top: 7px;"></div>#}
+{#    <div class="" id="f-59" style="left: 296px; top: 14px;"></div>#}
+{#    <div class="" id="f-60" style="left: 296px; top: 22px;"></div>#}
+{#    <div class="" id="f-61" style="left: 297px; top: 32px;"></div>#}
+{#    <div class="" id="f-62" style="left: 298px; top: 41px;"></div>#}
+{#    <div class="" id="f-63" style="left: 299px; top: 49px;"></div>#}
+{#    <div class="" id="f-64" style="left: 299px; top: 58px;"></div>#}
+{#    <div class="" id="f-65" style="left: 299px; top: 77px;"></div>#}
+{#    <div class="" id="f-66" style="left: 317px; top: 38px;"></div>#}
+{#    <div class="" id="f-67" style="left: 318px; top: 47px;"></div>#}
+{#    <div class="" id="f-68" style="left: 319px; top: 56px;"></div>#}
+{#    <div class="" id="f-69" style="left: 320px; top: 62px;"></div>#}
+{#    <div class="" id="f-70" style="left: 319px; top: 70px;"></div>#}
+{#    <div class="" id="f-71" style="left: 319px; top: 79px;"></div>#}
+{#    <div class="" id="f-72" style="left: 316px; top: 30px;"></div>#}
+{#    <div class="" id="f-73" style="left: 316px; top: 22px;"></div>#}
+{#    <div class="" id="f-74" style="left: 315px; top: 13px;"></div>#}
+{#    <div class="" id="f-75" style="left: 315px; top: 6px;"></div>#}
+{#    <div class="" id="f-76" style="left: 325px; top: 4px;"></div>#}
+{#    <div class="" id="f-77" style="left: 333px; top: 5px;"></div>#}
+{#    <div class="" id="f-78" style="left: 342px; top: 8px;"></div>#}
+{#    <div class="" id="f-79" style="left: 346px; top: 15px;"></div>#}
+{#    <div class="" id="f-80" style="left: 346px; top: 23px;"></div>#}
+{#    <div class="" id="f-81" style="left: 343px; top: 32px;"></div>#}
+{#    <div class="" id="f-82" style="left: 334px; top: 37px;"></div>#}
+{#    <div class="" id="f-83" style="left: 327px; top: 38px;"></div>#}
+{#    <div class="" id="f-84" style="left: 336px; top: 44px;"></div>#}
+{#    <div class="" id="f-85" style="left: 338px; top: 53px;"></div>#}
+{#    <div class="" id="f-86" style="left: 342px; top: 60px;"></div>#}
+{#    <div class="" id="f-87" style="left: 345px; top: 68px;"></div>#}
+{#    <div class="" id="f-88" style="left: 351px; top: 77px;"></div>#}
+{#    <div class="" id="f-89" style="left: 154px; top: 157px;"></div>#}
+{#    <div class="" id="f-90" style="left: 155px; top: 147px;"></div>#}
+{#    <div class="" id="f-91" style="left: 159px; top: 136px;"></div>#}
+{#    <div class="" id="f-92" style="left: 165px; top: 111px;"></div>#}
+{#    <div class="" id="f-93" style="left: 162px; top: 123px;"></div>#}
+{#    <div class="" id="f-94" style="left: 149px; top: 178px;"></div>#}
+{#    <div class="" id="f-95" style="left: 151px; top: 167px;"></div>#}
+{#    <div class="" id="f-96" style="left: 176px; top: 139px;"></div>#}
+{#    <div class="" id="f-97" style="left: 174px; top: 130px;"></div>#}
+{#    <div class="" id="f-98" style="left: 180px; top: 157px;"></div>#}
+{#    <div class="" id="f-99" style="left: 179px; top: 148px;"></div>#}
+{#    <div class="" id="f-100" style="left: 170px; top: 120px;"></div>#}
+{#    <div class="" id="f-101" style="left: 183px; top: 179px;"></div>#}
+{#    <div class="" id="f-102" style="left: 180px; top: 168px;"></div>#}
+{#    <div class="" id="f-103" style="left: 163px; top: 153px;"></div>#}
+{#    <div class="" id="f-104" style="left: 207px; top: 165px;"></div>#}
+{#    <div class="" id="f-105" style="left: 172px; top: 154px;"></div>#}
+{#    <div class="" id="f-106" style="left: 207px; top: 156px;"></div>#}
+{#    <div class="" id="f-107" style="left: 207px; top: 145px;"></div>#}
+{#    <div class="" id="f-108" style="left: 206px; top: 134px;"></div>#}
+{#    <div class="" id="f-109" style="left: 216px; top: 117px;"></div>#}
+{#    <div class="" id="f-110" style="left: 207px; top: 173px;"></div>#}
+{#    <div class="" id="f-111" style="left: 206px; top: 125px;"></div>#}
+{#    <div class="" id="f-112" style="left: 235px; top: 120px;"></div>#}
+{#    <div class="" id="f-113" style="left: 225px; top: 118px;"></div>#}
+{#    <div class="" id="f-114" style="left: 208px; top: 180px;"></div>#}
+{#    <div class="" id="f-115" style="left: 233px; top: 146px;"></div>#}
+{#    <div class="" id="f-116" style="left: 254px; top: 172px;"></div>#}
+{#    <div class="" id="f-117" style="left: 254px; top: 138px;"></div>#}
+{#    <div class="" id="f-118" style="left: 206px; top: 117px;"></div>#}
+{#    <div class="" id="f-119" style="left: 215px; top: 141px;"></div>#}
+{#    <div class="" id="f-120" style="left: 223px; top: 144px;"></div>#}
+{#    <div class="" id="f-121" style="left: 254px; top: 126px;"></div>#}
+{#    <div class="" id="f-122" style="left: 264px; top: 123px;"></div>#}
+{#    <div class="" id="f-123" style="left: 254px; top: 151px;"></div>#}
+{#    <div class="" id="f-124" style="left: 255px; top: 180px;"></div>#}
+{#    <div class="" id="f-125" style="left: 254px; top: 161px;"></div>#}
+{#    <div class="" id="f-126" style="left: 282px; top: 137px;"></div>#}
+{#    <div class="" id="f-127" style="left: 277px; top: 125px;"></div>#}
+{#    <div class="" id="f-128" style="left: 264px; top: 156px;"></div>#}
+{#    <div class="" id="f-129" style="left: 272px; top: 152px;"></div>#}
+{#    <div class="" id="f-130" style="left: 293px; top: 180px;"></div>#}
+{#    <div class="" id="f-131" style="left: 285px; top: 176px;"></div>#}
+{#    <div class="" id="f-132" style="left: 304px; top: 133px;"></div>#}
+{#    <div class="" id="f-133" style="left: 303px; top: 115px;"></div>#}
+{#    <div class="" id="f-134" style="left: 278px; top: 146px;"></div>#}
+{#    <div class="" id="f-135" style="left: 277px; top: 169px;"></div>#}
+{#    <div class="" id="f-136" style="left: 270px; top: 164px;"></div>#}
+{#    <div class="" id="f-137" style="left: 324px; top: 114px;"></div>#}
+{#    <div class="" id="f-138" style="left: 313px; top: 175px;"></div>#}
+{#    <div class="" id="f-139" style="left: 302px; top: 124px;"></div>#}
+{#    <div class="" id="f-140" style="left: 312px; top: 167px;"></div>#}
+{#    <div class="" id="f-141" style="left: 310px; top: 157px;"></div>#}
+{#    <div class="" id="f-142" style="left: 307px; top: 144px;"></div>#}
+{#    <div class="" id="f-143" style="left: 329px; top: 134px;"></div>#}
+{#    <div class="" id="f-144" style="left: 334px; top: 176px;"></div>#}
+{#    <div class="" id="f-145" style="left: 333px; top: 164px;"></div>#}
+{#    <div class="" id="f-146" style="left: 331px; top: 145px;"></div>#}
+{#    <div class="" id="f-147" style="left: 351px; top: 128px;"></div>#}
+{#    <div class="" id="f-148" style="left: 335px; top: 114px;"></div>#}
+{#    <div class="" id="f-149" style="left: 355px; top: 161px;"></div>#}
+{#    <div class="" id="f-150" style="left: 356px; top: 152px;"></div>#}
+{#    <div class="" id="f-151" style="left: 355px; top: 140px;"></div>#}
+{#    <div class="" id="f-152" style="left: 331px; top: 154px;"></div>#}
+{#    <div class="" id="f-153" style="left: 327px; top: 123px;"></div>#}
+{#    <div class="" id="f-154" style="left: 346px; top: 118px;"></div>#}
+{#    <div class="" id="f-155" style="left: 381px; top: 171px;"></div>#}
+{#    <div class="" id="f-156" style="left: 379px; top: 146px;"></div>#}
+{#    <div class="" id="f-157" style="left: 378px; top: 136px;"></div>#}
+{#    <div class="" id="f-158" style="left: 376px; top: 126px;"></div>#}
+{#    <div class="" id="f-159" style="left: 516px; top: 46px;"></div>#}
+{#    <div class="" id="f-160" style="left: 344px; top: 176px;"></div>#}
+{#    <div class="" id="f-161" style="left: 352px; top: 171px;"></div>#}
+{#    <div class="" id="f-162" style="left: 531px; top: 48px;"></div>#}
+{#    <div class="" id="f-163" style="left: 380px; top: 157px;"></div>#}
+{#    <div class="" id="f-164" style="left: 374px; top: 108px;"></div>#}
+{#    <div class="" id="f-165" style="left: 546px; top: 55px;"></div>#}
+{#    <div class="" id="f-166" style="left: 502px; top: 52px;"></div>#}
+{#    <div class="" id="f-167" style="left: 375px; top: 117px;"></div>#}
+{#    <div class="" id="f-168" style="left: 497px; top: 80px;"></div>#}
+{#    <div class="" id="f-169" style="left: 497px; top: 64px;"></div>#}
+{#    <div class="" id="f-170" style="left: 508px; top: 107px;"></div>#}
+{#    <div class="" id="f-171" style="left: 502px; top: 95px;"></div>#}
+{#    <div class="" id="f-172" style="left: 525px; top: 128px;"></div>#}
+{#    <div class="" id="f-173" style="left: 517px; top: 118px;"></div>#}
+{#    <div class="" id="f-174" style="left: 534px; top: 135px;"></div>#}
+{#    <div class="" id="f-175" style="left: 548px; top: 150px;"></div>#}
+{#    <div class="" id="f-176" style="left: 540px; top: 142px;"></div>#}
+{#    <div class="" id="f-177" style="left: 563px; top: 42px;"></div>#}
+{#    <div class="" id="f-178" style="left: 552px; top: 47px;"></div>#}
+{#    <div class="" id="f-179" style="left: 584px; top: 46px;"></div>#}
+{#    <div class="" id="f-180" style="left: 575px; top: 40px;"></div>#}
+{#    <div class="" id="f-181" style="left: 569px; top: 135px;"></div>#}
+{#    <div class="" id="f-182" style="left: 574px; top: 127px;"></div>#}
+{#    <div class="" id="f-183" style="left: 581px; top: 106px;"></div>#}
+{#    <div class="" id="f-184" style="left: 583px; top: 95px;"></div>#}
+{#    <div class="" id="f-186" style="left: 565px; top: 144px;"></div>#}
+{#    <div class="" id="f-190" style="left: 559px; top: 156px;"></div>#}
+{#    <div class="" id="f-191" style="left: 587px; top: 84px;"></div>#}
+{#    <div class="" id="f-192" style="left: 578px; top: 118px;"></div>#}
+{#    <div class="" id="f-193" style="left: 589px; top: 70px;"></div>#}
+{#    <div class="" id="f-194" style="left: 588px; top: 56px;"></div>#}
+{#</div>#}
+<div id="fireflies">
+    {#    H#}
+    <!-- Left vertical line -->
+    <div id="f-0" style="left: 50px; top: 50px;"></div>
+    <div id="f-1" style="left: 50px; top: 70px;"></div>
+    <div id="f-2" style="left: 50px; top: 90px;"></div>
+    <div id="f-3" style="left: 50px; top: 110px;"></div>
+    <div id="f-4" style="left: 50px; top: 130px;"></div>
+    <div id="f-5" style="left: 50px; top: 150px;"></div>
+    <div id="f-6" style="left: 50px; top: 170px;"></div>
+    <div id="f-7" style="left: 50px; top: 190px;"></div>
+    <div id="f-8" style="left: 50px; top: 210px;"></div>
+    <div id="f-9" style="left: 50px; top: 230px;"></div>
+
+    <!-- Horizontal middle line -->
+    <div id="f-10" style="left: 70px; top: 140px;"></div>
+    <div id="f-11" style="left: 90px; top: 140px;"></div>
+    <div id="f-12" style="left: 110px; top: 140px;"></div>
+    <div id="f-13" style="left: 130px; top: 140px;"></div>
+    <div id="f-14" style="left: 150px; top: 140px;"></div>
+
+    <!-- Right vertical line -->
+    <div id="f-15" style="left: 170px; top: 50px;"></div>
+    <div id="f-16" style="left: 170px; top: 70px;"></div>
+    <div id="f-2" style="left: 170px; top: 90px;"></div>
+    <div id="f-3" style="left: 170px; top: 110px;"></div>
+    <div id="f-4" style="left: 170px; top: 130px;"></div>
+    <div id="f-5" style="left: 170px; top: 150px;"></div>
+    <div id="f-6" style="left: 170px; top: 170px;"></div>
+    <div id="f-7" style="left: 170px; top: 190px;"></div>
+    <div id="f-8" style="left: 170px; top: 210px;"></div>
+    <div id="f-9" style="left: 170px; top: 230px;"></div>
+
+    <div id="f-0" style="left: 50px; top: 50px;"></div>
+    <div id="f-1" style="left: 50px; top: 70px;"></div>
+    <div id="f-2" style="left: 50px; top: 90px;"></div>
+    <div id="f-3" style="left: 50px; top: 110px;"></div>
+    <div id="f-4" style="left: 50px; top: 130px;"></div>
+    <div id="f-5" style="left: 50px; top: 150px;"></div>
+    <div id="f-6" style="left: 50px; top: 170px;"></div>
+    <div id="f-7" style="left: 50px; top: 190px;"></div>
+    <div id="f-8" style="left: 50px; top: 210px;"></div>
+    <div id="f-9" style="left: 50px; top: 230px;"></div>
+
+    <!-- Horizontal middle line -->
+    <div id="f-10" style="left: 70px; top: 140px;"></div>
+    <div id="f-11" style="left: 90px; top: 140px;"></div>
+    <div id="f-12" style="left: 110px; top: 140px;"></div>
+    <div id="f-13" style="left: 130px; top: 140px;"></div>
+    <div id="f-14" style="left: 150px; top: 140px;"></div>
+
+    <!-- Right vertical line -->
+    <div id="f-15" style="left: 170px; top: 50px;"></div>
+    <div id="f-16" style="left: 170px; top: 70px;"></div>
+    <div id="f-2" style="left: 170px; top: 90px;"></div>
+    <div id="f-3" style="left: 170px; top: 110px;"></div>
+    <div id="f-4" style="left: 170px; top: 130px;"></div>
+    <div id="f-5" style="left: 170px; top: 150px;"></div>
+    <div id="f-6" style="left: 170px; top: 170px;"></div>
+    <div id="f-7" style="left: 170px; top: 190px;"></div>
+    <div id="f-8" style="left: 170px; top: 210px;"></div>
+    <div id="f-9" style="left: 170px; top: 230px;"></div>
+
+    {#    I#}
+    <div id="f-15" style="left: 220px; top: 50px;"></div>
+    <div id="f-16" style="left: 220px; top: 70px;"></div>
+
+    <div id="f-4" style="left: 220px; top: 130px;"></div>
+    <div id="f-5" style="left: 220px; top: 150px;"></div>
+    <div id="f-6" style="left: 220px; top: 170px;"></div>
+    <div id="f-7" style="left: 220px; top: 190px;"></div>
+    <div id="f-8" style="left: 220px; top: 210px;"></div>
+    <div id="f-9" style="left: 220px; top: 230px;"></div>
+
+    <div id="f-15" style="left: 220px; top: 50px;"></div>
+    <div id="f-16" style="left: 220px; top: 70px;"></div>
+
+    <div id="f-4" style="left: 220px; top: 130px;"></div>
+    <div id="f-5" style="left: 220px; top: 150px;"></div>
+    <div id="f-6" style="left: 220px; top: 170px;"></div>
+    <div id="f-7" style="left: 220px; top: 190px;"></div>
+    <div id="f-8" style="left: 220px; top: 210px;"></div>
+    <div id="f-9" style="left: 220px; top: 230px;"></div>
+
+    <div id="f-8" style="left: 280px; top: 120px;"></div>
+    <div id="f-9" style="left: 280px; top: 160px;"></div>
+
+    <div id="f-8" style="left: 280px; top: 120px;"></div>
+    <div id="f-9" style="left: 280px; top: 160px;"></div>
+
+    <div id="f-15" style="left: 300px; top: 50px;"></div>
+    <div id="f-16" style="left: 315px; top: 70px;"></div>
+    <div id="f-2" style="left: 325px; top: 90px;"></div>
+    <div id="f-3" style="left: 335px; top: 110px;"></div>
+    <div id="f-4" style="left: 340px; top: 130px;"></div>
+    <div id="f-4" style="left: 340px; top: 130px;"></div>
+    <div id="f-5" style="left: 340px; top: 150px;"></div>
+    <div id="f-6" style="left: 335px; top: 170px;"></div>
+    <div id="f-7" style="left: 325px; top: 190px;"></div>
+    <div id="f-8" style="left: 315px; top: 210px;"></div>
+    <div id="f-9" style="left: 300px; top: 230px;"></div>
+
+</div>
+
+
+<div id="content">
+    <div id="arrow">Keep scroll down using mouse wheel or screen</div>
+    <div id="stars1"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="stars4"></div>
+    <div id="stars5"></div>
+    <div id="cloud1"></div>
+    <div id="cloud2"></div>
+    <div id="cloud3"></div>
+    <div id="cloud4"></div>
+    <div id="cloud5"></div>
+    <div id="cloud6"></div>
+    <div id="cloud7"></div>
+    <div id="cloud8"></div>
+    <div id="ground"></div>
+    <div id="horizon"></div>
+</div>
+<!-- partial -->
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="{% static 'js/firefly_style.js' %}"></script>
+
+</body>
+</html>
