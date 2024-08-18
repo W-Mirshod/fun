@@ -1,6 +1,6 @@
 from django.urls import path
 from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, OrangePage, \
-    FireFlyPage, JustHomePage
+    FireFlyPage, JustHomePage, TreePage
 
 urlpatterns = [
     path('', HomePage.as_view(), name='index'),
@@ -11,4 +11,5 @@ urlpatterns = [
     path('orange', OrangePage.as_view(), name='orange'),
     path('firefly/', FireFlyPage.as_view(), name='firefly'),
     path('just-house/', JustHomePage.as_view(), name='just_home'),
+    path('tree/', TreePage.as_view(), name='tree'),
 ]

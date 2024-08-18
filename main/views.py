@@ -40,3 +40,8 @@ class FireFlyPage(View):
 class JustHomePage(View):
     def get(self, request):
         return render(request, 'home_script.html')
+
+
+class TreePage(View):
+    def get(self, request):
+        return render(request, 'tree_style.html')
