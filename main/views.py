@@ -35,3 +35,8 @@ class OrangePage(View):
 class FireFlyPage(View):
     def get(self, request):
         return render(request, 'firefly_style.html')
+
+
+class JustHomePage(View):
+    def get(self, request):
+        return render(request, 'home_script.html')
