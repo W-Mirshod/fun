@@ -9,7 +9,7 @@ class HomePage(View):
 
 class ChoicesPage(View):
     def get(self, request):
-        return render(request, 'choices.html')
+        return render(request, 'button_index.html')
 
 
 class BloomingFlowersPage(View):

@@ -1,0 +1,160 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Inconsolata", monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050801;
+}
+
+p {
+    color: #fff;
+    text-align: center;
+    margin-top: 10px
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px;
+    font-size: 24px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.5s;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    flex-direction: row;
+}
+
+.blue-btn {
+    color: #03e9f4;
+    border: 1.5px solid #03e9f4;
+    border-radius: 7px;
+}
+
+.blue-btn:hover {
+    background-color: #03e9f4;
+    color: #050801;
+    box-shadow: 0px 0px 5px #03e9f4, 0px 0px 25px #03e9f4, 0px 0px 50px #03e9f4, 0px 0px 100px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.pink-btn {
+    color: #e100ff;
+    border: 1.5px solid #e100ff;
+    border-radius: 7px;
+}
+
+.pink-btn:hover {
+    background-color: #e100ff;
+    color: #050801;
+    box-shadow: 0px 0px 5px #e100ff, 0px 0px 25px #e100ff, 0px 0px 50px #e100ff, 0px 0px 100px #e100ff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Green Button */
+.green-btn {
+    color: #00ff00;
+    border: 1.5px solid #00ff00;
+    border-radius: 7px;
+}
+
+.green-btn:hover {
+    background-color: #00ff00;
+    color: #000000;
+    box-shadow: 0px 0px 5px #00ff00, 0px 0px 25px #00ff00, 0px 0px 50px #00ff00, 0px 0px 100px #00ff00;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Yellow Button */
+.yellow-btn {
+    color: #ffd700;
+    border: 1.5px solid #ffd700;
+    border-radius: 7px;
+}
+
+.yellow-btn:hover {
+    background-color: #ffd700;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ffd700, 0px 0px 25px #ffd700, 0px 0px 50px #ffd700, 0px 0px 100px #ffd700;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Red Button */
+.red-btn {
+    color: #ff0000;
+    border: 1.5px solid #ff0000;
+    border-radius: 7px;
+}
+
+.red-btn:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #ff0000, 0px 0px 25px #ff0000, 0px 0px 50px #ff0000, 0px 0px 100px #ff0000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Orange Button */
+.orange-btn {
+    color: #ff8c00;
+    border: 1.5px solid #ff8c00;
+    border-radius: 7px;
+}
+
+.orange-btn:hover {
+    background-color: #ff8c00;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ff8c00, 0px 0px 25px #ff8c00, 0px 0px 50px #ff8c00, 0px 0px 100px #ff8c00;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Purple Button */
+.purple-btn {
+    color: #8000ff;
+    border: 1.5px solid #8000ff;
+    border-radius: 7px;
+}
+
+.purple-btn:hover {
+    background-color: #8000ff;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #8000ff, 0px 0px 25px #8000ff, 0px 0px 50px #8000ff, 0px 0px 100px #8000ff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Cyan Button */
+.cyan-btn {
+    color: #00ffff;
+    border: 1.5px solid #00ffff;
+    border-radius: 7px;
+}
+
+.cyan-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    box-shadow: 0px 0px 5px #00ffff, 0px 0px 25px #00ffff, 0px 0px 50px #00ffff, 0px 0px 100px #00ffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Lime Button */
+.lime-btn {
+    color: #aaff00;
+    border: 1.5px solid #aaff00;
+    border-radius: 7px;
+}
+
+.lime-btn:hover {
+    background-color: #aaff00;
+    color: #000000;
+    box-shadow: 0px 0px 5px #aaff00, 0px 0px 25px #aaff00, 0px 0px 50px #aaff00, 0px 0px 100px #aaff00;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}

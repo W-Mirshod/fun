@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choices</title>
+    <link rel="stylesheet" href="{% static 'css/button_style.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000000;
+            margin: 0;
+            padding: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .btns {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btns a {
+            display: inline-block;
+            padding: 15px 25px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            min-width: 180px;
+        }
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .btns a {
+                min-width: 100px;
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btns {
+                flex-direction: column;
+            }
+
+            .btns a {
+                width: 100%;
+                min-width: unset;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+<p>Choices</p>
+<div class="btns">
+    <a class="blue-btn" href="{% url 'orange' %}">Instruction<h6>Better to read this firstly</h6></a>
+    <a class="pink-btn" href="{% url 'solar' %}">1. Solar System🌃</a>
+    <a class="green-btn" href="#">2. Just Calming✨
+        <h6>Press the grids and
+            build your house)</h6>
+    </a>
+    <a class="yellow-btn" href="{% url 'blooming' %}">3. Wanna see smth :)</a>
+    <a class="red-btn" href="#">Coming Soon...</a>
+    <a class="orange-btn" href="{% url 'firefly' %}">5. Follow Fireflies...</a>
+    <a class="purple-btn" href="{% url 'just_home' %}">6. You have come to your second home</a>
+    <a class="cyan-btn" href="{% url 'tree' %}">7. Animated Tree</a>
+    <a class="lime-btn" href="https://t.me/maverick3526">8. Back to the Chat in Tg↩️</a>
+</div>
+</body>
+</html>
