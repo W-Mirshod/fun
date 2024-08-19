@@ -158,3 +158,45 @@ a {
     box-shadow: 0px 0px 5px #aaff00, 0px 0px 25px #aaff00, 0px 0px 50px #aaff00, 0px 0px 100px #aaff00;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
+
+/* Magenta Button */
+.magenta-btn {
+    color: #ff00ff;
+    border: 1.5px solid #ff00ff;
+    border-radius: 7px;
+}
+
+.magenta-btn:hover {
+    background-color: #ff00ff;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ff00ff, 0px 0px 25px #ff00ff, 0px 0px 50px #ff00ff, 0px 0px 100px #ff00ff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Teal Button */
+.teal-btn {
+    color: #008080;
+    border: 1.5px solid #008080;
+    border-radius: 7px;
+}
+
+.teal-btn:hover {
+    background-color: #008080;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #008080, 0px 0px 25px #008080, 0px 0px 50px #008080, 0px 0px 100px #008080;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Gold Button */
+.gold-btn {
+    color: #ffd700;
+    border: 1.5px solid #ffd700;
+    border-radius: 7px;
+}
+
+.gold-btn:hover {
+    background-color: #ffd700;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ffd700, 0px 0px 25px #ffd700, 0px 0px 50px #ffd700, 0px 0px 100px #ffd700;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
