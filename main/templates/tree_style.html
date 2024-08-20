@@ -1,22 +1,26 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>3D Tree (Animated)</title>
-  <link rel="stylesheet" href="{% static 'css/tree_style.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Tree (Animated)</title>
+    <link rel="stylesheet" href="{% static 'css/tree_style.css' %}">
+    <link rel="icon" type="image/x-icon"
+          href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <main>
-  <div class="container">
-    <canvas class="program"></canvas>
-  </div>
+    <div class="container">
+        <canvas class="program"></canvas>
+    </div>
 </main>
 <!-- partial -->
-  <script src='https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js'></script><script  src="{% static 'js/tree_style.js' %}"></script>
+<script src='https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js'></script>
+<script src="{% static 'js/tree_style.js' %}"></script>
 
 </body>
 </html>
