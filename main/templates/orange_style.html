@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1.0">#}
     <title>Introduction</title>
     <link rel="stylesheet" href="{% static 'css/orange_style.css' %}">
     <link rel="icon" type="image/x-icon"
@@ -111,10 +111,9 @@ https://github.com/happy358/TornPaper
     </div>
 </main>
 <footer>
-    <p><a target="_blank" href="{% url 'choices' %}">Back To The Choices' Page</a></p>
+    <p><a href="{% url 'choices' %}">Back To The Choices' Page</a></p>
 </footer>
 <!-- partial -->
 <script src="{% static 'js/orange_style.js' %}"></script>
-
 </body>
 </html>

@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, OrangePage, \
+from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, orange_page, \
     FireFlyPage, JustHomePage, TreePage
 
 urlpatterns = [
@@ -8,7 +8,7 @@ urlpatterns = [
     path('flower-blooming', BloomingFlowersPage.as_view(), name='blooming'),
     path('calming-view', CalmingHomePage.as_view(), name='calming'),
     path('solar-system', SolarSystemPage.as_view(), name='solar'),
-    path('orange', OrangePage.as_view(), name='orange'),
+    path('orange', orange_page, name='orange'),
     path('firefly/', FireFlyPage.as_view(), name='firefly'),
     path('just-house/', JustHomePage.as_view(), name='just_home'),
     path('tree/', TreePage.as_view(), name='tree'),
