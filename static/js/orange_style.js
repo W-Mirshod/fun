@@ -1,1 +1,0 @@
-new Tornpaper({ grungeScale: 1.5 });

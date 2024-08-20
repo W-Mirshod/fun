@@ -200,3 +200,198 @@ a {
     box-shadow: 0px 0px 5px #ffd700, 0px 0px 25px #ffd700, 0px 0px 50px #ffd700, 0px 0px 100px #ffd700;
     -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
+/* Bronze Button */
+.bronze-btn {
+    color: #cd7f32;
+    border: 1.5px solid #cd7f32;
+    border-radius: 7px;
+}
+
+.bronze-btn:hover {
+    background-color: #cd7f32;
+    color: #000000;
+    box-shadow: 0px 0px 5px #cd7f32, 0px 0px 25px #cd7f32, 0px 0px 50px #cd7f32, 0px 0px 100px #cd7f32;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Coral Button */
+.coral-btn {
+    color: #ff7f50;
+    border: 1.5px solid #ff7f50;
+    border-radius: 7px;
+}
+
+.coral-btn:hover {
+    background-color: #ff7f50;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #ff7f50, 0px 0px 25px #ff7f50, 0px 0px 50px #ff7f50, 0px 0px 100px #ff7f50;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Indigo Button */
+.indigo-btn {
+    color: #4b0082;
+    border: 1.5px solid #4b0082;
+    border-radius: 7px;
+}
+
+.indigo-btn:hover {
+    background-color: #4b0082;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #4b0082, 0px 0px 25px #4b0082, 0px 0px 50px #4b0082, 0px 0px 100px #4b0082;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Turquoise Button */
+.turquoise-btn {
+    color: #40e0d0;
+    border: 1.5px solid #40e0d0;
+    border-radius: 7px;
+}
+
+.turquoise-btn:hover {
+    background-color: #40e0d0;
+    color: #000000;
+    box-shadow: 0px 0px 5px #40e0d0, 0px 0px 25px #40e0d0, 0px 0px 50px #40e0d0, 0px 0px 100px #40e0d0;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Lavender Button */
+.lavender-btn {
+    color: #e6e6fa;
+    border: 1.5px solid #e6e6fa;
+    border-radius: 7px;
+}
+
+.lavender-btn:hover {
+    background-color: #e6e6fa;
+    color: #000000;
+    box-shadow: 0px 0px 5px #e6e6fa, 0px 0px 25px #e6e6fa, 0px 0px 50px #e6e6fa, 0px 0px 100px #e6e6fa;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Olive Button */
+.olive-btn {
+    color: #808000;
+    border: 1.5px solid #808000;
+    border-radius: 7px;
+}
+
+.olive-btn:hover {
+    background-color: #808000;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #808000, 0px 0px 25px #808000, 0px 0px 50px #808000, 0px 0px 100px #808000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Mint Button */
+.mint-btn {
+    color: #98ff98;
+    border: 1.5px solid #98ff98;
+    border-radius: 7px;
+}
+
+.mint-btn:hover {
+    background-color: #98ff98;
+    color: #000000;
+    box-shadow: 0px 0px 5px #98ff98, 0px 0px 25px #98ff98, 0px 0px 50px #98ff98, 0px 0px 100px #98ff98;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Peach Button */
+.peach-btn {
+    color: #ffdab9;
+    border: 1.5px solid #ffdab9;
+    border-radius: 7px;
+}
+
+.peach-btn:hover {
+    background-color: #ffdab9;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ffdab9, 0px 0px 25px #ffdab9, 0px 0px 50px #ffdab9, 0px 0px 100px #ffdab9;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Ruby Button */
+.ruby-btn {
+    color: #e0115f;
+    border: 1.5px solid #e0115f;
+    border-radius: 7px;
+}
+
+.ruby-btn:hover {
+    background-color: #e0115f;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #e0115f, 0px 0px 25px #e0115f, 0px 0px 50px #e0115f, 0px 0px 100px #e0115f;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Aqua Button */
+.aqua-btn {
+    color: #00ffff;
+    border: 1.5px solid #00ffff;
+    border-radius: 7px;
+}
+
+.aqua-btn:hover {
+    background-color: #00ffff;
+    color: #000000;
+    box-shadow: 0px 0px 5px #00ffff, 0px 0px 25px #00ffff, 0px 0px 50px #00ffff, 0px 0px 100px #00ffff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Maroon Button */
+.maroon-btn {
+    color: #800000;
+    border: 1.5px solid #800000;
+    border-radius: 7px;
+}
+
+.maroon-btn:hover {
+    background-color: #800000;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #800000, 0px 0px 25px #800000, 0px 0px 50px #800000, 0px 0px 100px #800000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Periwinkle Button */
+.periwinkle-btn {
+    color: #ccccff;
+    border: 1.5px solid #ccccff;
+    border-radius: 7px;
+}
+
+.periwinkle-btn:hover {
+    background-color: #ccccff;
+    color: #000000;
+    box-shadow: 0px 0px 5px #ccccff, 0px 0px 25px #ccccff, 0px 0px 50px #ccccff, 0px 0px 100px #ccccff;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Salmon Button */
+.salmon-btn {
+    color: #fa8072;
+    border: 1.5px solid #fa8072;
+    border-radius: 7px;
+}
+
+.salmon-btn:hover {
+    background-color: #fa8072;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #fa8072, 0px 0px 25px #fa8072, 0px 0px 50px #fa8072, 0px 0px 100px #fa8072;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+/* Violet Button */
+.violet-btn {
+    color: #8a2be2;
+    border: 1.5px solid #8a2be2;
+    border-radius: 7px;
+}
+
+.violet-btn:hover {
+    background-color: #8a2be2;
+    color: #ffffff;
+    box-shadow: 0px 0px 5px #8a2be2, 0px 0px 25px #8a2be2, 0px 0px 50px #8a2be2, 0px 0px 100px #8a2be2;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Page</title>
+</head>
+<body>
+<h1>Welcome to The New Amazing Animation</h1>
+
+{% if popup_message %}
+    <script type="text/javascript">
+        alert("{{ popup_message }}");
+        window.location.href = "{% url 'choices' %}"
+    </script>
+{% endif %}
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 from django.views import View
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 class HomePage(View):
@@ -31,9 +31,21 @@ class SolarSystemPage(View):
 #     def get(self, request):
 #         return render(request, 'orange_style.html')
 
-def orange_page(request):
+def intro_page(request):
     if request.method == 'GET':
-        return render(request, 'orange_style.html')
+        return render(request, 'intro_style.html')
+
+
+def alerting(request):
+    if request.method == 'GET':
+        request.session['popup_message'] = "You currently can not enter this page"
+        popup_message = request.session.pop('popup_message', None)
+        if not popup_message:
+            redirect('choices')
+        context = {'popup_message': popup_message}
+
+        return render(request, 'alert.html', context)
+
 
 class FireFlyPage(View):
     def get(self, request):
@@ -48,3 +60,11 @@ class JustHomePage(View):
 class TreePage(View):
     def get(self, request):
         return render(request, 'tree_style.html')
+
+
+def my_view(request):
+    if request.method == 'GET':
+        # Option 1: Using session
+        request.session['popup_message'] = "This is a popup message."
+        return redirect('choices')
+    return render(request, 'intro_style.html')
