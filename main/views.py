@@ -38,7 +38,8 @@ def intro_page(request):
 
 def alerting(request):
     if request.method == 'GET':
-        request.session['popup_message'] = "You currently can not enter this page"
+        request.session['popup_message'] = \
+            "You currently can not enter this page. Sorry but it is not fully done yet, Orange)"
         popup_message = request.session.pop('popup_message', None)
         if not popup_message:
             redirect('choices')
