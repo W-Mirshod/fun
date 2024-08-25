@@ -16,8 +16,16 @@ SECRET_KEY = 'django-insecure-i-69851(r$7lp_9*3-7e*ysgjt(&8!gk%cfsxb_t1uw!*o1x!*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = ['*']
+# INTERNAL_IPS = ('127.0.0.1', '192.168.0.1',)
+# DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False, }
+#
+#
+# def show_toolbar(request):
+#     return True
+#
+#
+# SHOW_TOOLBAR_CALLBACK = show_toolbar
 
 # Application definition
 INSTALLED_APPS = [
@@ -28,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main.apps.MainConfig',
+    # 'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -38,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'root.urls'

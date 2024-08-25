@@ -1,16 +1,18 @@
 from django.urls import path
-from main.views import HomePage, ChoicesPage, BloomingFlowersPage, CalmingHomePage, SolarSystemPage, intro_page, \
-    FireFlyPage, JustHomePage, TreePage, alerting
+
+from main.views import (home_page, choices_page, blooming_flower_page, calming_home_page, solar_system_page,
+                        intro_page, just_home_page, tree_page, alerting, firefly_page, congrats_page)
 
 urlpatterns = [
-    path('', HomePage.as_view(), name='index'),
-    path('just-choose/', ChoicesPage.as_view(), name='choices'),
-    path('flower-blooming/', BloomingFlowersPage.as_view(), name='blooming'),
-    path('calming-view/', CalmingHomePage.as_view(), name='calming'),
-    path('solar-system/', SolarSystemPage.as_view(), name='solar'),
+    path('', home_page, name='index'),
+    path('just-choose/', choices_page, name='choices'),
+    path('flower-blooming/', blooming_flower_page, name='blooming'),
+    path('calming-view/', calming_home_page, name='calming'),
+    path('solar-system/', solar_system_page, name='solar'),
     path('intro/', intro_page, name='intro'),
-    path('firefly/', FireFlyPage.as_view(), name='firefly'),
-    path('just-house/', JustHomePage.as_view(), name='just_home'),
-    path('tree/', TreePage.as_view(), name='tree'),
+    path('firefly/', firefly_page, name='firefly'),
+    path('just-house/', just_home_page, name='just_home'),
+    path('tree/', tree_page, name='tree'),
     path('animation/', alerting, name='alerting'),
+    path('congrats/', congrats_page, name='congrats'),
 ]
