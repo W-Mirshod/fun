@@ -127,34 +127,3 @@ h4 {
 .text-right {
     text-align: right;
 }
-
-@media only screen and (max-width: 600px) {
-    .card {
-        width: 90%; /* Take up 90% of the screen width on mobile */
-        height: auto; /* Adjust height automatically */
-        top: 10%; /* Adjust top position for better display on mobile */
-        left: 50%;
-        transform: translate(-50%, 0) perspective(1500px); /* Adjust transform for smaller screens */
-        box-shadow: inset 10px 0 30px rgba(0, 0, 0, .3), 10px 0 40px rgba(0, 0, 0, .3); /* Lighter shadow for mobile */
-        transition: 0.7s;
-    }
-
-    .card:hover {
-        transform: translate(-50%, 0) perspective(1500px) rotate(10deg) scale(1.1); /* Slightly smaller scale on hover */
-        box-shadow: inset 10px 0 30px rgba(0, 0, 0, .4), 0 10px 60px rgba(0, 0, 0, .4); /* Adjust hover shadow */
-    }
-
-    .card .details {
-        margin-top: 50px; /* Adjust details margin for mobile */
-        padding: 0 5px;
-    }
-
-    .card .details p {
-        font-size: 14px; /* Slightly smaller font size */
-        line-height: 10px; /* Adjust line height */
-    }
-
-    .card .details h4 {
-        font-size: 24px; /* Adjust heading size */
-    }
-}
