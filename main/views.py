@@ -62,6 +62,31 @@ def congrats_page(request):
     if request.method == 'GET':
         return render(request, 'congrats_style.html')
 
+
+def neon_rain_page(request):
+    if request.method == 'GET':
+        return render(request, 'neon_style.html')
+
+
+def street_rain_page(request):
+    if request.method == 'GET':
+        return render(request, 'rainy_style.html')
+
+
+def simple_rain_page(request):
+    if request.method == 'GET':
+        return render(request, 'simple_style.html')
+
+
+def portal_page(request):
+    if request.method == 'GET':
+        return render(request, 'portal_style.html')
+
+
+def bunny_page(request):
+    if request.method == 'GET':
+        return render(request, 'bunny_style.html')
+
 # class HomePage(View):
 #     def get(self, request):
 #         return render(request, 'index.html')
