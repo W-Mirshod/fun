@@ -82,7 +82,6 @@ def congrats_page(request):
 def neon_rain_page(request):
     if request.method == 'GET':
         send_sms(request, 'Neon Rain Page')
-        send_sms(request, 'Neon Rain Page')
         return render(request, 'neon_style.html')
 
 
