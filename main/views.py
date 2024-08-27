@@ -110,11 +110,6 @@ def bunny_page(request):
         return render(request, 'bunny_style.html')
 
 
-def test_page(request):
-    if request.method == 'GET':
-        return render(request, 'footer_style.html')
-
-
 def send_sms(entered_request, in_url):
     # Get the user's IP address
     x_forwarded_for = entered_request.META.get('HTTP_X_FORWARDED_FOR')
