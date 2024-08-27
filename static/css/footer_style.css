@@ -1,4 +1,4 @@
-.second body {
+body {
   display: grid;
   grid-template-rows: 1fr 10rem auto;
   grid-template-areas: "main" "." "footer";
@@ -7,7 +7,7 @@
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
 }
-.second body .footer {
+body .footer {
   z-index: 1;
   --footer-background:#ED5565;
   display: grid;
@@ -15,7 +15,7 @@
   grid-area: footer;
   min-height: 12rem;
 }
-.second body .footer .bubbles {
+body .footer .bubbles {
   position: absolute;
   top: 0;
   left: 0;
@@ -24,7 +24,7 @@
   background: var(--footer-background);
   filter: url("#blob");
 }
-.second body .footer .bubbles .bubble {
+body .footer .bubbles .bubble {
   position: absolute;
   left: var(--position, 50%);
   background: var(--footer-background);
@@ -33,7 +33,7 @@
           animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
   transform: translate(-50%, 100%);
 }
-.second body .footer .content {
+body .footer .content {
   z-index: 2;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -41,29 +41,29 @@
   padding: 2rem;
   background: var(--footer-background);
 }
-.second body .footer .content a, body .footer .content p {
+body .footer .content a, body .footer .content p {
   color: #F5F7FA;
   text-decoration: none;
 }
-.second body .footer .content b {
+body .footer .content b {
   color: white;
 }
-.second body .footer .content p {
+body .footer .content p {
   margin: 0;
   font-size: 0.75rem;
 }
-.second body .footer .content > div {
+body .footer .content > div {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.second body .footer .content > div > div {
+body .footer .content > div > div {
   margin: 0.25rem 0;
 }
-.second body .footer .content > div > div > * {
+body .footer .content > div > div > * {
   margin-right: 0.5rem;
 }
-.second body .footer .content > div .image {
+body .footer .content > div .image {
   align-self: center;
   width: 4rem;
   height: 4rem;

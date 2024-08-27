@@ -2,7 +2,7 @@ from django.urls import path
 
 from main.views import (home_page, choices_page, blooming_flower_page, calming_home_page, solar_system_page,
                         intro_page, just_home_page, tree_page, alerting, firefly_page, congrats_page, simple_rain_page,
-                        neon_rain_page, street_rain_page, portal_page, bunny_page)
+                        neon_rain_page, street_rain_page, portal_page, bunny_page, test_page)
 
 urlpatterns = [
     path('', home_page, name='index'),
@@ -21,4 +21,5 @@ urlpatterns = [
     path('rainy/', street_rain_page, name='rainy'),
     path('portal/', portal_page, name='portal'),
     path('bunny/', bunny_page, name='bunny'),
+    path('testing/', test_page, name='test'),
 ]
