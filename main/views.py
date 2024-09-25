@@ -3,13 +3,31 @@ from datetime import datetime
 from django.shortcuts import render
 from user_agents import parse
 
-from main.models import RequestsLog
+from main.models import RequestsLog, Ratings
 
 
 def home_page(request):
     if request.method == 'GET':
         send_sms(request, 'Home Page')
         return render(request, 'index.html')
+
+
+def locking_page(request):
+    if request.method == 'GET':
+        send_sms(request, 'Locking Page')
+        return render(request, 'lock_style.html')
+
+
+def rate_page(request):
+    if request.method == 'GET':
+        send_sms(request, 'Rate Page')
+        return render(request, 'rate_style.html')
+
+
+def intro_page(request):
+    if request.method == 'GET':
+        send_sms(request, 'Intro Page')
+        return render(request, 'intro_script.html')
 
 
 def choices_page(request):
@@ -36,10 +54,14 @@ def solar_system_page(request):
         return render(request, 'universe_index.html')
 
 
-def intro_page(request):
+def ratings_page(request):
+    ratings = Ratings.objects.all()
+
     if request.method == 'GET':
-        send_sms(request, 'Intro Page')
-        return render(request, 'intro_style.html')
+        send_sms(request, 'Ratings Page')
+
+        context = {'ratings': ratings}
+        return render(request, 'ratings_style.html', context)
 
 
 def alerting(request):
@@ -114,6 +136,19 @@ def winter_page(request):
     if request.method == 'GET':
         send_sms(request, 'Winter Page')
         return render(request, 'winter_style.html')
+
+
+def submit_rating(request):
+    if request.method == 'GET':
+        send_sms(request, 'Submit Rating Page')
+        return render(request, 'rate_style.html')
+
+    if request.method == 'POST':
+        rating = request.POST['rating']
+        rating_obj = Ratings(rating=rating)
+        rating_obj.save()
+
+        return render(request, 'rate_style.html')
 
 
 def send_sms(entered_request, in_url):

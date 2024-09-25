@@ -10,7 +10,30 @@ class RequestsLog(models.Model):
     is_tablet = models.BooleanField(default=False)
     is_pc = models.BooleanField(default=False)
     referred_to = models.TextField(blank=True, null=True)
-    request_time = models.DateTimeField()
+    request_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Request from {self.ip_address} on {self.request_time}"
+
+
+class Ratings(models.Model):
+    title = models.CharField(max_length=75)
+    description = models.CharField(max_length=255)
+    image = models.ImageField(upload_to="intros/")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Intros"
+
+    def __str__(self):
+        return self.title
+
+
+class Rates(models.Model):
+    rating = models.ForeignKey(Ratings, on_delete=models.CASCADE)
+    rate = models.CharField(max_length=75)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Ratings"
