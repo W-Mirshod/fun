@@ -1,8 +1,10 @@
 from django.urls import path
 
-from main import views
+import main.views.auth as auth
+import main.views.pages as views
 
 urlpatterns = [
+    # pages
     path('', views.home_page, name='index'),
     path('intro/', views.intro_page, name='intro'),
     path('lock/', views.locking_page, name='locking'),
@@ -24,4 +26,16 @@ urlpatterns = [
     path('portal/', views.portal_page, name='portal'),
     path('bunny/', views.bunny_page, name='bunny'),
     path('simple-winter/', views.winter_page, name='winter'),
+    path('summer/', views.summer_page, name='summer'),
+    path('musical-lights/', views.musical_lights_page, name='musical_lights'),
+    path('cycling/', views.cycling, name='cycling'),
+    path('seasons/', views.seasons, name='seasons'),
+    path('space-travel/', views.space_travel, name='space_travel'),
+    path('wild-flowers/', views.wild_flowers, name='wild_flowers'),
+    path('flying-bunny/', views.flying_bunny, name='flying_bunny'),
+    path('abstraction/', views.abstraction, name='abstraction'),
+
+    # auth
+    path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),
+    path('auth/login/', auth.login_view, name='login'),
 ]

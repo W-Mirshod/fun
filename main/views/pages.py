@@ -138,6 +138,54 @@ def winter_page(request):
         return render(request, 'winter_style.html')
 
 
+def summer_page(request):
+    if request.method == 'GET':
+        send_sms(request, 'Summer Page')
+        return render(request, 'summer.html')
+
+
+def musical_lights_page(request):
+    if request.method == 'GET':
+        send_sms(request, 'Musical Lights Page')
+        return render(request, 'musical.html')
+
+
+def cycling(request):
+    if request.method == 'GET':
+        send_sms(request, 'Cycling Page')
+        return render(request, 'biking.html')
+
+
+def seasons(request):
+    if request.method == 'GET':
+        send_sms(request, 'Seasons Page')
+        return render(request, 'seasons.html')
+
+
+def space_travel(request):
+    if request.method == 'GET':
+        send_sms(request, 'Space Travel Page')
+        return render(request, 'space_travel.html')
+
+
+def wild_flowers(request):
+    if request.method == 'GET':
+        send_sms(request, 'Wild Flower Page')
+        return render(request, 'wild_flowers.html')
+
+
+def flying_bunny(request):
+    if request.method == 'GET':
+        send_sms(request, 'Flying Bunny Page')
+        return render(request, 'flying_bunny.html')
+
+
+def abstraction(request):
+    if request.method == 'GET':
+        send_sms(request, 'Abstraction Page')
+        return render(request, 'abstraction.html')
+
+
 def submit_rating(request):
     if request.method == 'GET':
         send_sms(request, 'Submit Rating Page')

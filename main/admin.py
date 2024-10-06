@@ -2,7 +2,9 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from main.models import RequestsLog, Ratings, Rates
+from main.models import RequestsLog, Ratings, Rates, CustomUser
+
+admin.site.register(CustomUser)
 
 
 class RequestsResource(resources.ModelResource):

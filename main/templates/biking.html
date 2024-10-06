@@ -14,16 +14,7 @@
 </head>
 
 <body>
-<h1>Welcome to The New Amazing Animation</h1>
 
-{% if popup_message %}
-    <script type="text/javascript">
-        alert("{{ popup_message }}");
-        window.location.href = "{% url 'choices' %}"
-    </script>
-{% endif %}
-
-<!-- partial:index.partial.html -->
 <div class="instructions">
     <div class="instructions__item">Use arrows to move</div>
     <br>
@@ -31,8 +22,7 @@
     <br>
 </div>
 
-<div class="post"><a href="{% url 'choices' %}" class="post__link"></a>Return to the Choices
-</div>
+<div class="post"><a href="{% url 'choices' %}" class="post__link">Return to the Choices</a></div>
 
 <div class="planet">
     <svg class="rotating-fog" x="0px" y="0px" viewBox="0 0 295 268.5" style="enable-background:new 0 0 295 268.5;"

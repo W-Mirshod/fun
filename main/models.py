@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
@@ -16,10 +17,14 @@ class RequestsLog(models.Model):
         return f"Request from {self.ip_address} on {self.request_time}"
 
 
+class CustomUser(AbstractUser):
+    name = models.CharField(max_length=255, blank=True, null=True)
+
+
 class Ratings(models.Model):
     title = models.CharField(max_length=75)
     description = models.CharField(max_length=255)
-    image = models.ImageField(upload_to="intros/")
+    image_url = models.URLField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:

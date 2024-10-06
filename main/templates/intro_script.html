@@ -6,11 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Main Page</title>
+    <title>New Version Intro</title>
     <link rel="stylesheet" href="{% static 'css/intro_style.css' %}">
     <link rel="icon" type="image/x-icon"
           href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
-
 </head>
 
 <body>
@@ -25,13 +24,16 @@
 
 <section class="nav" id="tab-main">
     <h1>ORANGE 2.0</h1>
-    <h3 class="span loader"><span class="m">B</span><span class="m">E</span><span class="m">N</span><span
-            class="m">E</span><span class="m">F</span><span class="m">I</span><span class="m">T</span><span
-            class="m">S</span><span class="m">&nbsp;</span><span class="m">o</span><span class="m">f</span><span
-            class="m">&nbsp;</span><span class="m">T</span><span class="m">E</span><span class="m">C</span><span
-            class="m">H</span><span class="m">N</span><span class="m">O</span><span class="m">L</span><span
-            class="m">O</span><span class="m">G</span><span class="m">I</span><span class="m">E</span><span
-            class="m">S</span></h3>
+    <h3 class="span loader"><span class="m"></span><span class="m">T</span><span class="m">H</span><span
+            class="m">I</span><span class="m">N</span><span class="m">K</span><span class="m">&nbsp;</span><span
+            class="m">A</span><span class="m">S</span><span class="m">&nbsp;</span><span
+            class="m">S</span><span class="m">O</span><span class="m">M</span><span class="m">E</span><span
+            class="m">T</span><span class="m">H</span><span class="m">I</span><span class="m">N</span><span
+            class="m">G</span><span class="m">&nbsp;</span><span class="m">G</span><span class="m">O</span><span
+            class="m">O</span><span class="m">D</span><span class="m">&nbsp;</span><span class="m">I</span><span
+            class="m">S</span><span class="m">&nbsp;</span><span class="m">W</span><span class="m">R</span><span
+            class="m">I</span><span class="m">T</span><span class="m">T</span><span class="m">E</span><span
+            class="m">N</span></h3>
     <div class="nav-container">
         <a class="nav-tab" href="#tab-main">🔹Intro</a>
         <a class="nav-tab" href="#tab-svelte">🔹CHOICES</a>
@@ -70,23 +72,23 @@
     </section>
 
 
-    <section class="slider" id="tab-next"><a>
-        <h1>🔹STATICS</h1>
-        <h2>Your average rating and a number of ratings</h2>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p>To enter, press on any text</p></a>
+    <section class="slider" id="tab-next">
+        <a href="{% url 'alerting' %}"><h1>🔹STATICS</h1>
+            <h2>Your average rating and a number of ratings</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>To enter, press on any text</p></a>
     </section>
 
 
     <section class="slider" id="tab-typescript">
-        <a><h1>🔹CONTACTING</h1>
-            <h2>You can send a direct message</h2>
+        <a href="{% url 'alerting' %}"><h1>🔹CONTACTING</h1>
+            <h2>Any Suggestions or Any Bugs You Find</h2>
             <br>
             <br>
             <br>
@@ -98,7 +100,7 @@
     </section>
 
     <section class="slider" id="tab-vite">
-        <a><h1>🔹ABOUT</h1>
+        <a href="{% url 'alerting' %}"><h1>🔹ABOUT</h1>
             <h2>History and Versions of Website</h2>
             <br>
             <br>
