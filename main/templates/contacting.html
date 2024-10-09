@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="{% static 'css/contacting.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <div class="text">
+        Sending Your Message
+    </div>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="input-data textarea">
+                <textarea name="body" rows="8" cols="80" style="resize: none; width: 500px; height: 200px;"
+                          required></textarea>
+                <br/>
+                <div class="underline"></div>
+                <label for="">
+                    Let me know<br>
+                    if you find any errors<br>
+                    spell mistakes<br>
+                    bugs & lags in the website<br>
+                    or<br>
+                    any ideas<br>
+                    any suggestions if u have<br>
+                    <br>
+                    Write Here</label>
+                <br/>
+                <div class="form-row submit-btn">
+                    <div class="input-data">
+                        <div class="inner"></div>
+                        <input type="submit" value="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,9 +1,12 @@
 from datetime import datetime
 
-from django.shortcuts import render
+from django.core.mail import send_mail
+from django.shortcuts import render, get_object_or_404
 from user_agents import parse
 
-from main.models import RequestsLog, Ratings
+from main.forms import ContactingForm
+from main.models import RequestsLog, Ratings, Rates, Contacting
+from root.settings import DEFAULT_FROM_EMAIL
 
 
 def home_page(request):
@@ -18,10 +21,36 @@ def locking_page(request):
         return render(request, 'lock_style.html')
 
 
-def rate_page(request):
+def rate_page(request, slug):
     if request.method == 'GET':
         send_sms(request, 'Rate Page')
-        return render(request, 'rate_style.html')
+
+        word = None
+
+        rate_number = request.GET.get('rating')
+        rating = get_object_or_404(Ratings, slug=slug)
+        rate = Rates.objects.filter(rating=rating)
+        if rate:
+            rate = get_object_or_404(Rates, rating=rating)
+            if rate.rate:
+                if rate.rate == '1':
+                    word = 'Terrible'
+                elif rate.rate == '2':
+                    word = 'Bad'
+                elif rate.rate == '3':
+                    word = 'Okay'
+                elif rate.rate == '4':
+                    word = 'Good'
+                elif rate.rate == '5':
+                    word = 'Perfect'
+
+        if not rate and rate_number:
+            rate = Rates.objects.create(rate=rate_number, rating=rating)
+
+        context = {'rate': rate,
+                   'word': word, }
+
+        return render(request, 'rate_style.html', context)
 
 
 def intro_page(request):
@@ -67,13 +96,6 @@ def ratings_page(request):
 def alerting(request):
     if request.method == 'GET':
         send_sms(request, 'Alerting Page')
-
-        # request.session['popup_message'] = \
-        #     "You currently can not enter this page. Sorry but it is not fully done yet, Orange !"
-        # popup_message = request.session.pop('popup_message', None)
-        # if not popup_message:
-        #     redirect('choices')
-        # context = {'popup_message': popup_message}
 
         return render(request, 'soon_style.html')
 
@@ -186,6 +208,12 @@ def abstraction(request):
         return render(request, 'abstraction.html')
 
 
+def timeline(request):
+    if request.method == 'GET':
+        send_sms(request, 'Timeline Page')
+        return render(request, 'timeline.html')
+
+
 def submit_rating(request):
     if request.method == 'GET':
         send_sms(request, 'Submit Rating Page')
@@ -197,6 +225,38 @@ def submit_rating(request):
         rating_obj.save()
 
         return render(request, 'rate_style.html')
+
+
+def contacting(request):
+    if request.method == 'GET':
+        send_sms(request, 'Contacting Page')
+        form = ContactingForm(request.GET)
+
+        return render(request, 'contacting.html', {'form': form})
+    if request.method == 'POST':
+        form = ContactingForm(request.POST)
+
+        if form.is_valid():
+            if request.user.is_authenticated:
+                Contacting.objects.create(user=request.user, body=form.cleaned_data['body'])
+
+                request.session['messages'] = "Thanks for your contribution)"
+
+                messages = request.session.pop('messages', None)
+
+                send_mail(subject=f'Contacting From Orange {request.user}',
+                          message=form.cleaned_data['body'],
+                          from_email=DEFAULT_FROM_EMAIL,
+                          recipient_list=['trading3526@gmail.com'],
+                          fail_silently=False)
+
+                context = {'messages': messages}
+                return render(request, 'intro_script.html', context)
+
+            else:
+                print("Why ain't u authenticated??")
+
+        return render(request, 'contacting.html', {'form': form})
 
 
 def send_sms(entered_request, in_url):

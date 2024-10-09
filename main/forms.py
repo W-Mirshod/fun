@@ -1,8 +1,7 @@
 # forms.py
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm
 
-from main.models import CustomUser
+from main.models import CustomUser, Contacting
 
 
 class SignUpForm(forms.ModelForm):
@@ -25,3 +24,9 @@ class SignUpForm(forms.ModelForm):
 class LogInForm(forms.Form):
     login_name = forms.CharField(max_length=150)
     login_password = forms.CharField(widget=forms.PasswordInput)
+
+
+class ContactingForm(forms.ModelForm):
+    class Meta:
+        model = Contacting
+        fields = ['body']

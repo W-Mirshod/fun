@@ -22,6 +22,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
 
+{% if messages %}
+    <script>
+        alert("{{ messages|escapejs }}");
+    </script>
+{% endif %}
+
 <section class="nav" id="tab-main">
     <h1>ORANGE 2.0</h1>
     <h3 class="span loader"><span class="m"></span><span class="m">T</span><span class="m">H</span><span
@@ -87,7 +93,7 @@
 
 
     <section class="slider" id="tab-typescript">
-        <a href="{% url 'alerting' %}"><h1>🔹CONTACTING</h1>
+        <a href="{% url 'contacting' %}"><h1>🔹CONTACTING</h1>
             <h2>Any Suggestions or Any Bugs You Find</h2>
             <br>
             <br>
@@ -100,7 +106,7 @@
     </section>
 
     <section class="slider" id="tab-vite">
-        <a href="{% url 'alerting' %}"><h1>🔹ABOUT</h1>
+        <a href="{% url 'timeline' %}"><h1>🔹ABOUT</h1>
             <h2>History and Versions of Website</h2>
             <br>
             <br>

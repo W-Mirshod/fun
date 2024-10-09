@@ -39,5 +39,5 @@ class RatingsAdmin(admin.ModelAdmin):
 
 @admin.register(Rates)
 class RatesAdmin(admin.ModelAdmin):
-    list_display = ['rating', 'rate', 'updated_at', 'created_at']
+    list_display = ['rate', 'updated_at', 'created_at']
     list_filter = ['rate', 'updated_at']

@@ -8,7 +8,7 @@ urlpatterns = [
     path('', views.home_page, name='index'),
     path('intro/', views.intro_page, name='intro'),
     path('lock/', views.locking_page, name='locking'),
-    path('rate/', views.rate_page, name='rate'),
+    path('rate/<slug:slug>/', views.rate_page, name='rate'),
     path('submit_rating', views.submit_rating, name='submit_rating'),
     path('just-choose/', views.choices_page, name='choices'),
     path('flower-blooming/', views.blooming_flower_page, name='blooming'),
@@ -34,6 +34,8 @@ urlpatterns = [
     path('wild-flowers/', views.wild_flowers, name='wild_flowers'),
     path('flying-bunny/', views.flying_bunny, name='flying_bunny'),
     path('abstraction/', views.abstraction, name='abstraction'),
+    path('contacting/', views.contacting, name='contacting'),
+    path('timeline/', views.timeline, name='timeline'),
 
     # auth
     path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),

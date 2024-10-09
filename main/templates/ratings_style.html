@@ -37,7 +37,7 @@
 
         {% for rating in ratings %}
             <figure>
-                <a href="{% url 'rate' %}">
+                <a href="{% url 'rate' rating.slug %}">
                     <img src="{{ rating.image_url }}"
                          alt="{{ rating.title }}" title="{{ rating.title }}">
                     <h3>{{ rating.description }}</h3>
