@@ -1,28 +1,32 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.core.mail import send_mail
 from django.shortcuts import render, get_object_or_404
 from user_agents import parse
 
 from main.forms import ContactingForm
-from main.models import RequestsLog, Ratings, Rates, Contacting
+from main.models import RequestsLog, Ratings, Rates, Contacting, Versions
 from root.settings import DEFAULT_FROM_EMAIL
 
 
 def home_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Home Page')
         return render(request, 'index.html')
 
 
 def locking_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Locking Page')
         return render(request, 'lock_style.html')
 
 
 def rate_page(request, slug):
     if request.method == 'GET':
+
+        save_time_spent(request)
         send_sms(request, 'Rate Page')
 
         word = None
@@ -55,39 +59,45 @@ def rate_page(request, slug):
 
 def intro_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Intro Page')
         return render(request, 'intro_script.html')
 
 
 def choices_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Choices Page')
         return render(request, 'button_index.html')
 
 
 def blooming_flower_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Blooming Flower Page')
         return render(request, 'blooming.html')
 
 
 def calming_home_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Calming Home Page')
         return render(request, 'calming_style.html')
 
 
 def solar_system_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Solar System Page')
         return render(request, 'universe_index.html')
 
 
 def ratings_page(request):
-    ratings = Ratings.objects.all()
-
     if request.method == 'GET':
+        ratings = Ratings.objects.all()
+
         send_sms(request, 'Ratings Page')
+        save_time_spent(request)
 
         context = {'ratings': ratings}
         return render(request, 'ratings_style.html', context)
@@ -95,6 +105,7 @@ def ratings_page(request):
 
 def alerting(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Alerting Page')
 
         return render(request, 'soon_style.html')
@@ -102,120 +113,144 @@ def alerting(request):
 
 def firefly_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Firefly Page')
         return render(request, 'firefly_style.html')
 
 
 def just_home_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Just Home Page')
         return render(request, 'home_script.html')
 
 
 def tree_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Tree Page')
         return render(request, 'tree_style.html')
 
 
 def congrats_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Congrats Page')
         return render(request, 'congrats_style.html')
 
 
 def neon_rain_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Neon Rain Page')
         return render(request, 'neon_style.html')
 
 
 def street_rain_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Street Rain Page')
         return render(request, 'rainy_style.html')
 
 
 def simple_rain_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Simple Rain Page')
         return render(request, 'simple_style.html')
 
 
 def portal_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Portal Page')
         return render(request, 'portal_style.html')
 
 
 def bunny_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Bunny Page')
         return render(request, 'bunny_style.html')
 
 
 def winter_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Winter Page')
         return render(request, 'winter_style.html')
 
 
 def summer_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Summer Page')
         return render(request, 'summer.html')
 
 
 def musical_lights_page(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Musical Lights Page')
         return render(request, 'musical.html')
 
 
 def cycling(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Cycling Page')
         return render(request, 'biking.html')
 
 
 def seasons(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Seasons Page')
         return render(request, 'seasons.html')
 
 
 def space_travel(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Space Travel Page')
         return render(request, 'space_travel.html')
 
 
 def wild_flowers(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Wild Flower Page')
         return render(request, 'wild_flowers.html')
 
 
 def flying_bunny(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Flying Bunny Page')
         return render(request, 'flying_bunny.html')
 
 
 def abstraction(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Abstraction Page')
         return render(request, 'abstraction.html')
 
 
 def timeline(request):
     if request.method == 'GET':
+        save_time_spent(request)
+        versions = Versions.objects.all()
+
+        context = {'versions': versions}
+
         send_sms(request, 'Timeline Page')
-        return render(request, 'timeline.html')
+        return render(request, 'timeline.html', context)
 
 
 def submit_rating(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Submit Rating Page')
         return render(request, 'rate_style.html')
 
@@ -229,6 +264,7 @@ def submit_rating(request):
 
 def contacting(request):
     if request.method == 'GET':
+        save_time_spent(request)
         send_sms(request, 'Contacting Page')
         form = ContactingForm(request.GET)
 
@@ -283,3 +319,16 @@ def send_sms(entered_request, in_url):
         is_pc=user_agent.is_pc,
         referred_to=in_url,
         request_time=current_time)
+
+
+def save_time_spent(request):
+    if request.user.is_authenticated:
+        total_time_spent = request.session.get('total_time_spent', 0)
+
+        page_visit = RequestsLog.objects.order_by('-request_time').first()
+
+        if page_visit:
+            page_visit.duration = timedelta(seconds=total_time_spent)
+            page_visit.save()
+
+        del request.session['total_time_spent']

@@ -1,5 +1,8 @@
+from datetime import timezone
+
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 from django.utils.text import slugify
 
 
@@ -12,10 +15,14 @@ class RequestsLog(models.Model):
     is_tablet = models.BooleanField(default=False)
     is_pc = models.BooleanField(default=False)
     referred_to = models.TextField(blank=True, null=True)
-    request_time = models.DateTimeField(auto_now_add=True)
+    duration = models.DurationField(blank=True, null=True)
+    request_time = models.DateTimeField(auto_now_add=True, db_index=True)
 
     def __str__(self):
-        return f"Request from {self.ip_address} on {self.request_time}"
+        if self.duration:
+            return f"{self.ip_address} ({self.duration}s)"
+        else:
+            return f"{self.ip_address}"
 
 
 class CustomUser(AbstractUser):
@@ -58,3 +65,17 @@ class Contacting(models.Model):
 
     class Meta:
         verbose_name_plural = "Contacting"
+
+
+class Versions(models.Model):
+    version = models.CharField(max_length=55)
+    description = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Versions"
+        ordering = ['created_at']
+
+    def __str__(self):
+        return self.version
