@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from user_agents import parse
 
 from main.forms import ContactingForm
-from main.models import RequestsLog, Ratings, Rates, Contacting, Versions
+from main.models import RequestsLog, Intro, Rates, Contacting, Versions
 from root.settings import DEFAULT_FROM_EMAIL
 
 
@@ -32,7 +32,7 @@ def rate_page(request, slug):
         word = None
 
         rate_number = request.GET.get('rating')
-        rating = get_object_or_404(Ratings, slug=slug)
+        rating = get_object_or_404(Intro, slug=slug)
         rate = Rates.objects.filter(rating=rating)
         if rate:
             rate = get_object_or_404(Rates, rating=rating)
@@ -66,7 +66,6 @@ def intro_page(request):
 
 def choices_page(request):
     if request.method == 'GET':
-        save_time_spent(request)
         send_sms(request, 'Choices Page')
         return render(request, 'button_index.html')
 
@@ -94,7 +93,7 @@ def solar_system_page(request):
 
 def ratings_page(request):
     if request.method == 'GET':
-        ratings = Ratings.objects.all()
+        ratings = Intro.objects.all()
 
         send_sms(request, 'Ratings Page')
         save_time_spent(request)
@@ -237,6 +236,31 @@ def abstraction(request):
         return render(request, 'abstraction.html')
 
 
+def statics(request):
+    if request.method == 'GET':
+        five_st = Rates.objects.filter(rate=5).count()
+        four_st = Rates.objects.filter(rate=4).count()
+        three_st = Rates.objects.filter(rate=3).count()
+        two_st = Rates.objects.filter(rate=2).count()
+        one_st = Rates.objects.filter(rate=1).count()
+
+        all_rated = 21
+        not_rated = all_rated - (five_st + four_st + three_st + two_st + one_st)
+
+        save_time_spent(request)
+        send_sms(request, 'Statics Page')
+
+        context = {'five_st': five_st,
+                   'four_st': four_st,
+                   'three_st': three_st,
+                   'two_st': two_st,
+                   'one_st': one_st,
+                   'all_rated': all_rated,
+                   'not_rated': not_rated, }
+
+        return render(request, 'statics.html', context)
+
+
 def timeline(request):
     if request.method == 'GET':
         save_time_spent(request)
@@ -256,7 +280,7 @@ def submit_rating(request):
 
     if request.method == 'POST':
         rating = request.POST['rating']
-        rating_obj = Ratings(rating=rating)
+        rating_obj = Intro(rating=rating)
         rating_obj.save()
 
         return render(request, 'rate_style.html')
@@ -325,7 +349,7 @@ def save_time_spent(request):
     if request.user.is_authenticated:
         total_time_spent = request.session.get('total_time_spent', 0)
 
-        page_visit = RequestsLog.objects.order_by('-request_time').first()
+        page_visit = RequestsLog.objects.order_by('-request_time').all()[1]
 
         if page_visit:
             page_visit.duration = timedelta(seconds=total_time_spent)

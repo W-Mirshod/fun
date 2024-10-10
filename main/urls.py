@@ -36,6 +36,7 @@ urlpatterns = [
     path('abstraction/', views.abstraction, name='abstraction'),
     path('contacting/', views.contacting, name='contacting'),
     path('timeline/', views.timeline, name='timeline'),
+    path('statics/', views.statics, name='statics'),
 
     # auth
     path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),

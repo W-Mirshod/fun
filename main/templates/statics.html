@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pie Chart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="{% static 'css/statics.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+
+<main>
+    <h1>Pie Chart of Ratings ({{ all_rated }})</h1>
+    <section>
+        <div class="pieID pie">
+
+        </div>
+        <ul class="pieID legend">
+            <li>
+                <em>Five Stars</em>
+                <span>{{ five_st }}</span>
+            </li>
+            <li>
+                <em>Four Stars</em>
+                <span>{{ four_st }}</span>
+            </li>
+            <li>
+                <em>Three Stars</em>
+                <span>{{ three_st }}</span>
+            </li>
+            <li>
+                <em>Two Stars</em>
+                <span>{{ two_st }}</span>
+            </li>
+            <li>
+                <em>One Star</em>
+                <span>{{ one_st }}</span>
+            </li>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <li>
+                <em>Not Rated</em>
+                <span>{{ not_rated }}</span>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <p></p>
+    </section>
+</main>
+<footer>
+    Back to <a href="{% url 'intro' %}">Orange</a>
+</footer>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="{% static 'js/statics.js' %}"></script>
+
+</body>
+</html>

@@ -1,37 +1,13 @@
 from django.contrib import admin
-from import_export import resources
 from import_export.admin import ImportExportModelAdmin
 
-from main.models import RequestsLog, Ratings, Rates, CustomUser, Versions
-
-admin.site.register(CustomUser)
-admin.site.register(Versions)
+from main.models import RequestsLog, Intro, Rates, CustomUser, Versions, Contacting
+from main.resources import IntroResource, RequestsResource, VersionsResource
 
 
-class RequestsResource(resources.ModelResource):
-    class Meta:
-        model = RequestsLog
-        fields = '__all__'
-
-
-class RatingsResource(resources.ModelResource):
-    class Meta:
-        model = Ratings
-        fields = '__all__'
-
-
-@admin.register(RequestsLog)
-class RequestsLogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    resource_class = RequestsResource
-    list_display = ['__str__', 'referred_to', 'request_time', 'device_type', 'browser', 'os', 'is_mobile',
-                    'is_tablet', 'is_pc']
-    list_filter = ['request_time', 'ip_address']
-    search_fields = ['device_type', 'ip_address']
-
-
-@admin.register(Ratings)
-class RatingsAdmin(admin.ModelAdmin):
-    resource_class = RatingsResource
+@admin.register(Intro)
+class IntroAdmin(admin.ModelAdmin):
+    resource_class = IntroResource
 
     list_display = ['title', 'description', 'created_at']
     list_filter = ['title', 'created_at']
@@ -40,5 +16,38 @@ class RatingsAdmin(admin.ModelAdmin):
 
 @admin.register(Rates)
 class RatesAdmin(admin.ModelAdmin):
-    list_display = ['rate', 'updated_at', 'created_at']
+    list_display = ['rating', 'rate', 'updated_at', 'created_at']
     list_filter = ['rate', 'updated_at']
+
+
+@admin.register(RequestsLog)
+class RequestsLogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    resource_class = RequestsResource
+
+    list_display = ['__str__', 'referred_to', 'request_time', 'device_type', 'browser', 'os', 'is_mobile',
+                    'is_tablet', 'is_pc']
+    list_filter = ['request_time', 'ip_address']
+    search_fields = ['device_type', 'ip_address']
+
+
+@admin.register(CustomUser)
+class CustomUserAdmin(admin.ModelAdmin):
+    list_display = ['username', 'password', 'is_staff', 'is_superuser', 'is_active']
+    list_filter = ['username', 'is_active']
+    search_fields = ['username']
+
+
+@admin.register(Versions)
+class VersionsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    resource_class = VersionsResource
+
+    list_display = ['version', 'description', 'created_at']
+    list_filter = ['version', 'created_at']
+    search_fields = ['version']
+
+
+@admin.register(Contacting)
+class ContactingAdmin(admin.ModelAdmin):
+    list_display = ['user', 'body', 'created_at']
+    list_filter = ['user', 'created_at']
+    search_fields = ['user']

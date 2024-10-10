@@ -29,7 +29,7 @@ class CustomUser(AbstractUser):
     name = models.CharField(max_length=255, blank=True, null=True)
 
 
-class Ratings(models.Model):
+class Intro(models.Model):
     title = models.CharField(max_length=75, unique=True)
     slug = models.SlugField(max_length=75, blank=True)
     description = models.CharField(max_length=255)
@@ -49,7 +49,7 @@ class Ratings(models.Model):
 
 
 class Rates(models.Model):
-    rating = models.ForeignKey(Ratings, on_delete=models.CASCADE)
+    rating = models.ForeignKey(Intro, on_delete=models.CASCADE, related_name="ratings")
     rate = models.CharField(max_length=75)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

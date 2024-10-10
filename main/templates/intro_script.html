@@ -27,7 +27,6 @@
         alert("{{ messages|escapejs }}");
     </script>
 {% endif %}
-
 <section class="nav" id="tab-main">
     <h1>ORANGE 2.0</h1>
     <h3 class="span loader"><span class="m"></span><span class="m">T</span><span class="m">H</span><span
@@ -40,6 +39,7 @@
             class="m">S</span><span class="m">&nbsp;</span><span class="m">W</span><span class="m">R</span><span
             class="m">I</span><span class="m">T</span><span class="m">T</span><span class="m">E</span><span
             class="m">N</span></h3>
+
     <div class="nav-container">
         <a class="nav-tab" href="#tab-main">🔹Intro</a>
         <a class="nav-tab" href="#tab-svelte">🔹CHOICES</a>
@@ -79,7 +79,7 @@
 
 
     <section class="slider" id="tab-next">
-        <a href="{% url 'alerting' %}"><h1>🔹STATICS</h1>
+        <a href="{% url 'statics' %}"><h1>🔹STATICS</h1>
             <h2>Your average rating and a number of ratings</h2>
             <br>
             <br>
