@@ -127,6 +127,6 @@ DEFAULT_FROM_EMAIL = 'python3526@gmail.com'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'main.CustomUser'
 
-LOGIN_URL = '/auth/sign-up/'
+LOGIN_URL = '/auth/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

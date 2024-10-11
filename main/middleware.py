@@ -12,7 +12,7 @@ class LoginRequiredMiddleware:
         self.get_response = get_response
 
     def __call__(self, request):
-        if (request.path.startswith('/admin-page/') or request.path.startswith('/auth/sign-up/')
+        if (request.path.startswith('/admin-page/') or request.path.startswith('/auth/login/')
                 or request.path.startswith('/auth/login/')):
             return self.get_response(request)
 

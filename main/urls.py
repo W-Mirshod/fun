@@ -39,6 +39,7 @@ urlpatterns = [
     path('statics/', views.statics, name='statics'),
 
     # auth
-    path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),
+    # path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),
     path('auth/login/', auth.login_view, name='login'),
+    path('auth/logout/', auth.logout_view, name='logout'),
 ]

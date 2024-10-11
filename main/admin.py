@@ -32,9 +32,9 @@ class RequestsLogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ['username', 'password', 'is_staff', 'is_superuser', 'is_active']
-    list_filter = ['username', 'is_active']
-    search_fields = ['username']
+    list_display = ['name', 'password', 'is_staff', 'is_superuser', 'is_active']
+    list_filter = ['name', 'is_active']
+    search_fields = ['name']
 
 
 @admin.register(Versions)

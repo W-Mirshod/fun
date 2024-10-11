@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choices</title>
     <link rel="stylesheet" href="{% static 'css/button_style.css' %}">
-    <link rel="icon" type="image/x-icon"
-          href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -74,7 +74,10 @@
     <a class="periwinkle-btn" href="{% url 'space_travel' %}">19. Space Travel🛸</a>
     <a class="bronze-btn" href="{% url 'wild_flowers' %}">20. Wild Flowers🌾</a>
     <a class="ruby-btn" href="{% url 'flying_bunny' %}">21. Flying Bunny🚀</a>
-    <a class="green-btn" href="{% url 'alerting' %}">22. My Profile(soon)🔐</a>
+    <a class="green-btn" href="{% url 'alerting' %}">22. My Profile🔐
+        <pre>(in coming versions)</pre>
+    </a>
+    {#    <a class="red-btn" href="{% url 'logout' %}">23. Log Out⤴️</a>#}
     <a class="teal-btn" href="{% url 'intro' %}">23. Back To Intro↩️</a>
 </div>
 
