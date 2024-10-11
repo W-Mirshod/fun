@@ -349,10 +349,13 @@ def save_time_spent(request):
     if request.user.is_authenticated:
         total_time_spent = request.session.get('total_time_spent', 0)
 
-        page_visit = RequestsLog.objects.order_by('-request_time').all()[1]
+        page_visits = RequestsLog.objects.order_by('-request_time')
+
+        if page_visits.count() > 1:
+            page_visit = page_visits[1]
+        else:
+            page_visit = None
 
         if page_visit:
             page_visit.duration = timedelta(seconds=total_time_spent)
             page_visit.save()
-
-        del request.session['total_time_spent']

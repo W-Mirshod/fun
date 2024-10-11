@@ -41,13 +41,15 @@ class SessionTimeMiddleware:
 
         # Calculate total time spent at the end of the session or after certain views
         if request.user.is_authenticated:
-            session_start = request.session['start_time']
-            # Calculate time spent on the current request
-            time_spent = int(timezone.now().timestamp() - session_start)
-            # Store the time spent for the current page view
-            request.session['total_time_spent'] = request.session.get('total_time_spent', 0) + time_spent
+            # Safely access the start_time
+            session_start = request.session.get('start_time')
+            if session_start is not None:  # Check if start_time exists
+                # Calculate time spent on the current request
+                time_spent = int(timezone.now().timestamp() - session_start)
+                # Store the time spent for the current page view
+                request.session['total_time_spent'] = request.session.get('total_time_spent', 0) + time_spent
 
-            # Optionally update start time to now for the next request
-            request.session['start_time'] = timezone.now().timestamp()
+                # Optionally update start time to now for the next request
+                request.session['start_time'] = timezone.now().timestamp()
 
         return response

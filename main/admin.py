@@ -1,7 +1,7 @@
 from django.contrib import admin
 from import_export.admin import ImportExportModelAdmin
 
-from main.models import RequestsLog, Intro, Rates, CustomUser, Versions, Contacting
+from main.models import RequestsLog, Intro, Rates, Versions, Contacting, CustomUser
 from main.resources import IntroResource, RequestsResource, VersionsResource
 
 
@@ -32,9 +32,9 @@ class RequestsLogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 @admin.register(CustomUser)
 class CustomUserAdmin(admin.ModelAdmin):
-    list_display = ['name', 'password', 'is_staff', 'is_superuser', 'is_active']
-    list_filter = ['name', 'is_active']
-    search_fields = ['name']
+    list_display = ['username', 'is_staff', 'is_superuser', 'is_active', 'last_login']
+    list_filter = ['username', 'is_active']
+    search_fields = ['username']
 
 
 @admin.register(Versions)
@@ -50,4 +50,4 @@ class VersionsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class ContactingAdmin(admin.ModelAdmin):
     list_display = ['user', 'body', 'created_at']
     list_filter = ['user', 'created_at']
-    search_fields = ['user']
+    search_fields = ['user__username']

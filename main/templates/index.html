@@ -9,8 +9,29 @@
     <title>For Orange</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+    <style>
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success" id="message">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+</div>
 <a href="{% url 'intro' %}" target="_parent">
     <header class="top-header">
     </header>
@@ -39,7 +60,7 @@
     <section class="error">
         <div class="error__content">
             <div class="error__message message">
-                <h1 class="message__title">Hi, Orange)</h1>
+                <h1 class="message__title">ORANGE 2.0</h1>
                 <p class="message__text">Press To Continue</p>
             </div>
             <div class="error__nav e-nav">
@@ -48,6 +69,20 @@
         </div>
     </section>
 </a>
+
+<script>
+    // Hide the message after 5 seconds
+    setTimeout(function () {
+        const messageElement = document.getElementById('message');
+        if (messageElement) {
+            messageElement.style.transition = "opacity 2.0s ease";  // Optional fade-out effect
+            messageElement.style.opacity = '0';  // Fade out
+            setTimeout(function () {
+                messageElement.remove();  // Remove from DOM after fade-out
+            }, 1000);  // Wait for the fade-out effect to complete
+        }
+    }, 2500);  // 5000 milliseconds = 5 seconds
+</script>
 
 </body>
 </html>

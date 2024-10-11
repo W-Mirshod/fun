@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #ff6f20; /* Orange color */
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: #ff6f20; /* Orange color */
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #e05e16; /* Darker orange on hover */
+        }
+
+        .icon {
+            font-size: 100px;
+            color: #ff6f20; /* Orange color */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <i class="fas fa-exclamation-triangle icon"></i>
+    <h1>404</h1>
+    <p>Oops! The page you're looking for cannot be found in Orange.</p>
+    <p>It might have been removed, or you may have entered an incorrect URL.</p>
+    <br>
+    <br>
+    <br>
+    <a href="{% url 'intro' %}">Return to Home</a>
+</div>
+</body>
+</html>

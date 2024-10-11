@@ -20,6 +20,12 @@ class SignUpForm(forms.ModelForm):
         if password and password2 and password != password2:
             raise forms.ValidationError("Passwords do not match")
 
+    def clean_password(self):
+        password = self.cleaned_data.get("password")
+        if CustomUser.objects.filter(password=password).exists():
+            raise forms.ValidationError("This password is already in use. Please choose a different one.")
+        return password
+
 
 class LogInForm(forms.Form):
     login_name = forms.CharField(max_length=150)
