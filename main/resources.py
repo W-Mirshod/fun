@@ -30,7 +30,7 @@ class RatesResource(resources.ModelResource):
 class VersionsResource(resources.ModelResource):
     class Meta:
         model = Versions
-        fields = '__all__'
+        fields = ['id', 'versions', 'description', 'created_at', 'updated_at']
 
 
 class ContactingResource(resources.ModelResource):
