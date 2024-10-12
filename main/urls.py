@@ -7,7 +7,6 @@ urlpatterns = [
     # pages
     path('', views.home_page, name='index'),
     path('intro/', views.intro_page, name='intro'),
-    path('lock/', views.locking_page, name='locking'),
     path('rate/<slug:slug>/', views.rate_page, name='rate'),
     path('submit_rating', views.submit_rating, name='submit_rating'),
     path('just-choose/', views.choices_page, name='choices'),
@@ -37,6 +36,7 @@ urlpatterns = [
     path('contacting/', views.contacting, name='contacting'),
     path('timeline/', views.timeline, name='timeline'),
     path('statics/', views.statics, name='statics'),
+    path('secret-room/', views.secret_room, name='secret_room'),
 
     # auth
     # path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),

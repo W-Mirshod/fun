@@ -1,21 +1,30 @@
 from django.contrib import admin
+from django.contrib.auth.models import Group
 from import_export.admin import ImportExportModelAdmin
 
 from main.models import RequestsLog, Intro, Rates, Versions, Contacting, CustomUser
-from main.resources import IntroResource, RequestsResource, VersionsResource
+from main.resources import IntroResource, RequestsResource, VersionsResource, CustomUsersResource, ContactingResource, \
+    RatesResource
+
+admin.site.unregister(Group)
 
 
 @admin.register(Intro)
-class IntroAdmin(admin.ModelAdmin):
+class IntroAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = IntroResource
 
-    list_display = ['title', 'description', 'created_at']
+    fields = ['title', 'description', 'image']
+    list_display = ['__str__', 'title', 'description', 'created_at']
     list_filter = ['title', 'created_at']
     search_fields = ['title', 'description']
+    list_display_links = ['__str__']
+    list_editable = ['title', 'description']
 
 
 @admin.register(Rates)
-class RatesAdmin(admin.ModelAdmin):
+class RatesAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    resource_class = RatesResource
+
     list_display = ['rating', 'rate', 'updated_at', 'created_at']
     list_filter = ['rate', 'updated_at']
 
@@ -31,10 +40,13 @@ class RequestsLogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 
 @admin.register(CustomUser)
-class CustomUserAdmin(admin.ModelAdmin):
+class CustomUserAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    resource_class = CustomUsersResource
+
     list_display = ['username', 'is_staff', 'is_superuser', 'is_active', 'last_login']
     list_filter = ['username', 'is_active']
     search_fields = ['username']
+    actions = ['import_data', 'export_data']
 
 
 @admin.register(Versions)
@@ -47,7 +59,9 @@ class VersionsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
 
 @admin.register(Contacting)
-class ContactingAdmin(admin.ModelAdmin):
+class ContactingAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+    resource_class = ContactingResource
+
     list_display = ['user', 'body', 'created_at']
     list_filter = ['user', 'created_at']
     search_fields = ['user__username']

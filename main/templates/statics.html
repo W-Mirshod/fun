@@ -54,9 +54,33 @@
         <p></p>
     </section>
 </main>
-<footer>
-    Back to <a href="{% url 'intro' %}">Orange</a>
-</footer>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<main style="
+    font-size: 30px;
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the main element */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center text alignment */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+">
+    Back to
+    <a href="{% url 'intro' %}" style="
+        color: #007bff; /* Primary blue color */
+        text-decoration: none; /* Remove underline */
+        transition: color 0.3s ease; /* Smooth color change */
+    " onmouseover="this.style.color='#0056b3'; this.style.textDecoration='underline';"
+       onmouseout="this.style.color='#007bff'; this.style.textDecoration='none';">
+        Orange
+    </a>
+</main>
+
 
 <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="{% static 'js/statics.js' %}"></script>

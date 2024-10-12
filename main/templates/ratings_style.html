@@ -27,7 +27,9 @@
                     <h2>Ratings</h2>
                     <p>Now You can rate choices !</p>
                     <p><br><small>Be Honest, it's optional<br>
-                        Everyone has different interests and views. For this reason, it's better to clarify 'em)</small>
+                        Everyone has different interests and views.</small>
+                    </p>
+                    <p><small>For this reason, it's better to clarify 'em)</small>
                     </p>
                 </div>
             </div>
@@ -36,9 +38,10 @@
         {% for rating in ratings %}
             <figure>
                 <a href="{% url 'rate' rating.slug %}">
-                    <img src="{{ rating.image_url }}"
-                         alt="{{ rating.title }}" title="{{ rating.title }}">
-                    <h3>{{ rating.description }}</h3>
+                    <img src="{{ rating.image.url }}"
+                         alt="{{ rating.title }}" title="{{ rating.description }}">
+                    <h3>{{ rating.title }}</h3>
+                    <pre style="color: #7E3A2C">({{ rating.description|wrap_text:23 }})</pre>
                     <figcaption>{{ rating.id|ordinal }} Choice</figcaption>
                 </a>
             </figure>

@@ -16,3 +16,12 @@ def ordinal(number):
         suffix = {1: 'st', 2: 'nd', 3: 'rd'}.get(number % 10, 'th')
 
     return f"{number}{suffix}"
+
+
+@register.filter
+def wrap_text(value, length=25):
+    """
+    Breaks text into lines with a maximum length of `length` characters.
+    """
+    words = [value[i:i + length] for i in range(0, len(value), length)]
+    return '-\n'.join(words)

@@ -34,7 +34,7 @@ class Intro(models.Model):
     title = models.CharField(max_length=75, unique=True)
     slug = models.SlugField(max_length=75, blank=True)
     description = models.CharField(max_length=255)
-    image_url = models.URLField(max_length=255)
+    image = models.ImageField(upload_to="intro_images")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
@@ -46,7 +46,7 @@ class Intro(models.Model):
         verbose_name_plural = "Intros"
 
     def __str__(self):
-        return self.title
+        return f"{self.id}. {self.title}"
 
 
 class Rates(models.Model):

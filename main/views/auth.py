@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import check_password
 from django.shortcuts import redirect, render
 
 from main.models import CustomUser
@@ -44,13 +45,18 @@ def login_view(request):
 
                 return redirect('index')
             else:
-                CustomUser.objects.create_user(username=username, password=password)
-                user = authenticate(request, username=username, password=password)
-                login(request, user)
+                for user in CustomUser.objects.all():
+                    if check_password(password, user.password):
+                        messages.error(request, 'Password already taken !')
+                        break
+                else:
+                    CustomUser.objects.create_user(username=username, password=password)
+                    user = authenticate(request, username=username, password=password)
+                    login(request, user)
 
-                messages.success(request, "Successfully Created A New Account")
+                    messages.success(request, "Successfully Created A New Account")
 
-                return redirect('index')
+            return redirect('index')
 
         elif password == 'password':
             messages.error(request, 'I said this is too easy to guess (')

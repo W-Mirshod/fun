@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'main.middleware.LoginRequiredMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'main.middleware.SessionTimeMiddleware'
     # 'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 

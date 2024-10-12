@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <title>Star Rating</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <link rel="stylesheet" href="{% static 'css/../../static/css/rate_style.css' %}">
     <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;display=swap'>
-    <link rel="stylesheet" href="{% static 'css/rate_style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:ital,wght@0,100..900;1,100..900&display=swap"
@@ -199,6 +199,14 @@
         <br>
 
         <button class="bubbly-button">Click me!</button>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="">
+            <h6><a href="{% url 'ratings' %}" class="post__link" style="text-decoration: ButtonBorder">Return to the Ratings</a></h6>
+        </div>
     </form>
 {% else %}
     <svg id="touchstone" viewBox="-70 -70 300 194">
