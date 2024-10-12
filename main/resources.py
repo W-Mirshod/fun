@@ -18,7 +18,7 @@ class RequestsResource(resources.ModelResource):
 class IntroResource(resources.ModelResource):
     class Meta:
         model = Intro
-        fields = ['id', 'title', 'slug', 'description', 'image', 'created_at']
+        fields = ('id', 'title', 'slug', 'description', 'image', 'created_at')
 
 
 class RatesResource(resources.ModelResource):
@@ -30,7 +30,7 @@ class RatesResource(resources.ModelResource):
 class VersionsResource(resources.ModelResource):
     class Meta:
         model = Versions
-        fields = ['id', 'versions', 'description', 'created_at', 'updated_at']
+        fields = ('id', 'version', 'description', 'created_at', 'updated_at')
 
 
 class ContactingResource(resources.ModelResource):
