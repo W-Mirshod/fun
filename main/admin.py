@@ -27,6 +27,7 @@ class RatesAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 
     list_display = ['rating', 'rate', 'updated_at', 'created_at']
     list_filter = ['rate', 'updated_at']
+    list_editable = ['rate']
 
 
 @admin.register(RequestsLog)
