@@ -51,6 +51,7 @@ class Intro(models.Model):
 
 class Rates(models.Model):
     rating = models.ForeignKey(Intro, on_delete=models.CASCADE, related_name="ratings")
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="rates")
     rate = models.CharField(max_length=75)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

@@ -21,11 +21,11 @@ def rate_page(request, slug):
 
         rate_number = request.GET.get('rating')
         rating = get_object_or_404(Intro, slug=slug)
-        rate = Rates.objects.filter(rating=rating)
+        rate = Rates.objects.filter(rating=rating, user=request.user)
 
         word = "Refresh"
         if rate:
-            rate = get_object_or_404(Rates, rating=rating)
+            rate = get_object_or_404(Rates, rating=rating, user=request.user)
             if rate.rate:
                 if rate.rate == '1':
                     word = 'Terrible'
@@ -39,7 +39,7 @@ def rate_page(request, slug):
                     word = 'Perfect'
 
         if not rate and rate_number:
-            rate = Rates.objects.create(rate=rate_number, rating=rating)
+            rate = Rates.objects.create(rate=rate_number, rating=rating, user=request.user)
 
         context = {'rate': rate,
                    'word': word}
@@ -210,11 +210,11 @@ def secret_room(request):
 
 def statics(request):
     if request.method == 'GET':
-        five_st = Rates.objects.filter(rate=5).count()
-        four_st = Rates.objects.filter(rate=4).count()
-        three_st = Rates.objects.filter(rate=3).count()
-        two_st = Rates.objects.filter(rate=2).count()
-        one_st = Rates.objects.filter(rate=1).count()
+        five_st = Rates.objects.filter(rate=5, user_id=request.user.id).count()
+        four_st = Rates.objects.filter(rate=4, user_id=request.user.id).count()
+        three_st = Rates.objects.filter(rate=3, user_id=request.user.id).count()
+        two_st = Rates.objects.filter(rate=2, user_id=request.user.id).count()
+        one_st = Rates.objects.filter(rate=1, user_id=request.user.id).count()
 
         all_rated = 28
         not_rated = all_rated - (five_st + four_st + three_st + two_st + one_st)
