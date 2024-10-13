@@ -25,7 +25,7 @@ class IntroAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class RatesAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = RatesResource
 
-    list_display = ['rating', 'rate', 'updated_at', 'created_at']
+    list_display = ['rating', 'rate', 'updated_at', 'created_at', 'user']
     list_filter = ['rate', 'updated_at']
     list_editable = ['rate']
 
