@@ -1,6 +1,51 @@
-.idea
-.venv
-__pycache__
+# Python
+*.py[cod]
+__pycache__/
+*.so
+
+# Django
+*.log
+local_settings.py
 db.sqlite3
-media/intros/
-main/migrations/
+db.sqlite3-journal
+media
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Static files
+/static/
+/staticfiles/
+
+# Temporary files
+*.bak
+*.tmp
+
+# Docker
+.docker/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover

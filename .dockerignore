@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+*.so
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+
+# Development/IDE
+.vscode
+.idea
+
+# OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
