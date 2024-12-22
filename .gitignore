@@ -49,3 +49,7 @@ htmlcov/
 .coverage.*
 coverage.xml
 *.cover
+
+# Git
+.git
+.gitignore

@@ -1,25 +1,21 @@
-# Use an official Python runtime as a parent image
-FROM python:3.9
+FROM python:3.10-slim
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
 
-# Set work directory
 WORKDIR /app
 
-# Install dependencies
-COPY requirements.txt /app/
-RUN pip install --upgrade pip && pip install -r requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt \
+    && pip install --no-cache-dir gunicorn whitenoise
 
-# Copy project
-COPY . /app/
+COPY . .
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
+RUN python manage.py makemigrations main && \
+    python manage.py migrate && \
+    python manage.py create_admin && \
+    python manage.py collectstatic --noinput
 
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "your_project_name.wsgi:application"]
+EXPOSE 1407
 
-# Define the command to run the app
-CMD ["npm", "start"]
+CMD gunicorn --bind 0.0.0.0:1407 root.wsgi:application --workers 3
