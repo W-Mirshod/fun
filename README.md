@@ -21,8 +21,8 @@ git clone https://github.com/W-Mirshod/orange.git
 
 2. Build and run with Docker:
 ```
-docker build -t orange .
-docker run -d -p 1407:1407 orange
+docker build -t 6af6a32c2087 .
+docker run -d -p 1407:1407 6af6a32c2087
 ```
 
 3. Access the application:
