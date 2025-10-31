@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "1407:1407"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+    volumes:
+      - .:/app
+      - static_files:/app/staticfiles
+    depends_on:
+      - db
+    command: gunicorn --bind 0.0.0.0:1407 root.wsgi:application --workers 3
+    networks:
+      - web
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=for_her_db
+      - POSTGRES_USER=for_her_user
+      - POSTGRES_PASSWORD=for_her_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
+  static_files:
+
+networks:
+  web:
+    external: true
