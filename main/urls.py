@@ -1,19 +1,22 @@
-from django.urls import path
+from django.urls import path, re_path
+from django.shortcuts import redirect
 
-import main.views.auth as auth
 import main.views.pages as views
+
+def auth_redirect(request):
+    """Redirect old auth URLs to home since authentication is no longer required"""
+    return redirect('/')
 
 urlpatterns = [
     # pages
     path('', views.home_page, name='index'),
+    # Handle old auth URLs - redirect to home
+    re_path(r'^auth/.*', auth_redirect),
     path('intro/', views.intro_page, name='intro'),
-    path('rate/<slug:slug>/', views.rate_page, name='rate'),
-    path('submit_rating', views.submit_rating, name='submit_rating'),
     path('just-choose/', views.choices_page, name='choices'),
     path('flower-blooming/', views.blooming_flower_page, name='blooming'),
     path('calming-view/', views.calming_home_page, name='calming'),
     path('solar-system/', views.solar_system_page, name='solar'),
-    path('ratings/', views.ratings_page, name='ratings'),
     path('firefly/', views.firefly_page, name='firefly'),
     path('just-house/', views.just_home_page, name='just_home'),
     path('tree/', views.tree_page, name='tree'),
@@ -33,13 +36,7 @@ urlpatterns = [
     path('wild-flowers/', views.wild_flowers, name='wild_flowers'),
     path('flying-bunny/', views.flying_bunny, name='flying_bunny'),
     path('abstraction/', views.abstraction, name='abstraction'),
-    path('contacting/', views.contacting, name='contacting'),
     path('timeline/', views.timeline, name='timeline'),
     path('statics/', views.statics, name='statics'),
     path('secret-room/', views.secret_room, name='secret_room'),
-
-    # auth
-    # path('auth/sign-up/', auth.SignUpView.as_view(), name='signup'),
-    path('auth/login/', auth.login_view, name='login'),
-    path('auth/logout/', auth.logout_view, name='logout'),
 ]

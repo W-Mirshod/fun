@@ -1,85 +1,308 @@
 {% load static %}
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choices</title>
-    <link rel="stylesheet" href="{% static 'css/button_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #000000;
-            margin: 0;
-            padding: 20px;
-            transition: margin-left 0.5s;
-        }
-
-        .btns {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .btns a {
-            display: inline-block;
-            padding: 15px 25px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            min-width: 180px;
-        }
-
-        /* Media query for smaller screens */
-        @media (max-width: 768px) {
-            .btns a {
-                min-width: 100px;
-                padding: 10px 20px;
-                font-size: 1em;
-            }
-        }
-    </style>
-
 </head>
 <body>
-
-<div class="btns">
-    <a class="blue-btn" href="{% url 'congrats' %}">1. Everyday is Your DAY🍬</a>
-    <a class="pink-btn" href="{% url 'solar' %}">2. Solar System🪐</a>
-    <a class="green-btn" href="{% url 'calming' %}">3. Just Calming✨</a>
-    <a class="yellow-btn" href="{% url 'blooming' %}">4. Wanna see smth🌷:)</a>
-    <a class="orange-btn" href="{% url 'firefly' %}">5. Follow Fireflies...💥</a>
-    <a class="purple-btn" href="{% url 'just_home' %}">6. Second Home🏠</a>
-    <a class="cyan-btn" href="{% url 'tree' %}">7. Animated Tree🎄</a>
-    <a class="red-btn" href="{% url 'simp_rain' %}">8. Looks like Raining🫧?</a>
-    <a class="lime-btn" href="{% url 'rainy' %}">9. Street in the Rain☔️</a>
-    <a class="magenta-btn" href="{% url 'neon_rain' %}">10. Neon Rain🌧</a>
-    <a class="olive-btn" href="{% url 'bunny' %}">11. Bunny Game🐇??</a>
-    <a class="indigo-btn" href="{% url 'portal' %}">12. 3D Portal🔮</a>
-    <a class="coral-btn" href="{% url 'musical_lights' %}">13. Musical Lights💫</a>
-    <a class="mint-btn" href="{% url 'cycling' %}">14. Cycling Alone🌎</a>
-    <a class="peach-btn" href="{% url 'seasons' %}">15. Seasons Animation🔰</a>
-    <a class="lime-btn" href="{% url 'winter' %}">16. Calming Winter Theme❄️</a>
-    <a class="violet-btn" href="{% url 'summer' %}">17. Summer Theme🍃</a>
-    <a class="aqua-btn" href="{% url 'abstraction' %}">18. Abstraction💎</a>
-    <a class="periwinkle-btn" href="{% url 'space_travel' %}">19. Space Travel🛸</a>
-    <a class="bronze-btn" href="{% url 'wild_flowers' %}">20. Wild Flowers🌾</a>
-    <a class="ruby-btn" href="{% url 'flying_bunny' %}">21. Flying Bunny🚀</a>
-    <a class="green-btn" href="{% url 'alerting' %}">22. My Profile🔐
-        <pre>(in coming versions)</pre>
-    </a>
-    {#    <a class="red-btn" href="{% url 'logout' %}">23. Log Out⤴️</a>#}
-    <a class="teal-btn" href="{% url 'intro' %}">23. Back To Intro↩️</a>
-</div>
-
+    <div class="background">
+        <div class="floating-hearts">
+            <div class="heart">💖</div>
+            <div class="heart">🌸</div>
+            <div class="heart">🌺</div>
+            <div class="heart">🌷</div>
+            <div class="heart">🌹</div>
+            <div class="heart">💕</div>
+            <div class="heart">🌼</div>
+            <div class="heart">🌻</div>
+            <div class="heart">🦋</div>
+            <div class="heart">✨</div>
+            <div class="heart">💫</div>
+            <div class="heart">🌟</div>
+        </div>
+        
+        <div class="sparkles">
+            <div class="sparkle">✨</div>
+            <div class="sparkle">💫</div>
+            <div class="sparkle">⭐</div>
+            <div class="sparkle">✨</div>
+            <div class="sparkle">💫</div>
+            <div class="sparkle">⭐</div>
+        </div>
+        
+        <div class="container">
+            <div class="welcome-text">
+                <h1 class="title">Welcome</h1>
+                <p class="subtitle">Something beautiful awaits you</p>
+            </div>
+            
+            <div class="button-container">
+                <div class="button-row">
+                    <a href="{% url 'congrats' %}" class="beautiful-button congrats-button">
+                        <span class="button-text">Everyday is Your DAY🍬</span>
+                        <span class="button-instruction">Press this button</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">💖</span>
+                            <span class="heart-icon">🌸</span>
+                            <span class="heart-icon">🌺</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'solar' %}" class="beautiful-button solar-button">
+                        <span class="button-text">Solar System🪐</span>
+                        <span class="button-instruction">Explore the planets</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌞</span>
+                            <span class="heart-icon">🪐</span>
+                            <span class="heart-icon">🌍</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'calming' %}" class="beautiful-button calming-button">
+                        <span class="button-text">Just Calming✨</span>
+                        <span class="button-instruction">Relax and enjoy</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">💙</span>
+                            <span class="heart-icon">🌊</span>
+                            <span class="heart-icon">☁️</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'blooming' %}" class="beautiful-button blooming-button">
+                        <span class="button-text">Wanna see smth🌷:)</span>
+                        <span class="button-instruction">Watch the blooming</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌷</span>
+                            <span class="heart-icon">🌸</span>
+                            <span class="heart-icon">🌺</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'firefly' %}" class="beautiful-button firefly-button">
+                        <span class="button-text">Follow Fireflies...💥</span>
+                        <span class="button-instruction">Follow the lights</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">✨</span>
+                            <span class="heart-icon">💫</span>
+                            <span class="heart-icon">🌟</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'just_home' %}" class="beautiful-button home-button">
+                        <span class="button-text">Second Home🏠</span>
+                        <span class="button-instruction">Visit the home</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🏠</span>
+                            <span class="heart-icon">💚</span>
+                            <span class="heart-icon">🌿</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'tree' %}" class="beautiful-button tree-button">
+                        <span class="button-text">Animated Tree🎄</span>
+                        <span class="button-instruction">Watch the tree grow</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🎄</span>
+                            <span class="heart-icon">🌳</span>
+                            <span class="heart-icon">🍃</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'simp_rain' %}" class="beautiful-button rain-button">
+                        <span class="button-text">Looks like Raining🫧?</span>
+                        <span class="button-instruction">Feel the rain</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌧</span>
+                            <span class="heart-icon">💧</span>
+                            <span class="heart-icon">☔</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'rainy' %}" class="beautiful-button rain-button">
+                        <span class="button-text">Street in the Rain☔️</span>
+                        <span class="button-instruction">Walk in the rain</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌧</span>
+                            <span class="heart-icon">🌦</span>
+                            <span class="heart-icon">☔</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'neon_rain' %}" class="beautiful-button rain-button">
+                        <span class="button-text">Neon Rain🌧</span>
+                        <span class="button-instruction">Neon rain experience</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">💜</span>
+                            <span class="heart-icon">🌧</span>
+                            <span class="heart-icon">✨</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'bunny' %}" class="beautiful-button bunny-button">
+                        <span class="button-text">Bunny Game🐇??</span>
+                        <span class="button-instruction">Play with bunny</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🐰</span>
+                            <span class="heart-icon">🥕</span>
+                            <span class="heart-icon">🎮</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'portal' %}" class="beautiful-button portal-button">
+                        <span class="button-text">3D Portal🔮</span>
+                        <span class="button-instruction">Explore the portal</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌀</span>
+                            <span class="heart-icon">✨</span>
+                            <span class="heart-icon">🌟</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'musical_lights' %}" class="beautiful-button musical-button">
+                        <span class="button-text">Musical Lights💫</span>
+                        <span class="button-instruction">Music and lights</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🎵</span>
+                            <span class="heart-icon">💫</span>
+                            <span class="heart-icon">✨</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'cycling' %}" class="beautiful-button cycling-button">
+                        <span class="button-text">Cycling Alone🌎</span>
+                        <span class="button-instruction">Take a ride</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🚴</span>
+                            <span class="heart-icon">🌍</span>
+                            <span class="heart-icon">🌿</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'seasons' %}" class="beautiful-button seasons-button">
+                        <span class="button-text">Seasons Animation🔰</span>
+                        <span class="button-instruction">Watch the seasons</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🌸</span>
+                            <span class="heart-icon">🍂</span>
+                            <span class="heart-icon">❄️</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'winter' %}" class="beautiful-button winter-button">
+                        <span class="button-text">Calming Winter Theme❄️</span>
+                        <span class="button-instruction">Winter wonderland</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">❄️</span>
+                            <span class="heart-icon">⛄</span>
+                            <span class="heart-icon">🌨</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'summer' %}" class="beautiful-button summer-button">
+                        <span class="button-text">Summer Theme🍃</span>
+                        <span class="button-instruction">Summer vibes</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">☀️</span>
+                            <span class="heart-icon">🍃</span>
+                            <span class="heart-icon">🌊</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'abstraction' %}" class="beautiful-button abstraction-button">
+                        <span class="button-text">Abstraction💎</span>
+                        <span class="button-instruction">Abstract art</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">💎</span>
+                            <span class="heart-icon">🎨</span>
+                            <span class="heart-icon">✨</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'space_travel' %}" class="beautiful-button space-button">
+                        <span class="button-text">Space Travel🛸</span>
+                        <span class="button-instruction">Journey to space</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🛸</span>
+                            <span class="heart-icon">🚀</span>
+                            <span class="heart-icon">⭐</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'wild_flowers' %}" class="beautiful-button wild-flowers-button">
+                        <span class="button-text">Wild Flowers🌾</span>
+                        <span class="button-instruction">Interactive art experience</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🎨</span>
+                            <span class="heart-icon">🌸</span>
+                            <span class="heart-icon">✨</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'flying_bunny' %}" class="beautiful-button flying-bunny-button">
+                        <span class="button-text">Flying Bunny🚀</span>
+                        <span class="button-instruction">Watch the bunny fly</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🐰</span>
+                            <span class="heart-icon">🚀</span>
+                            <span class="heart-icon">✈️</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="button-row">
+                    <a href="{% url 'alerting' %}" class="beautiful-button profile-button">
+                        <span class="button-text">My Profile🔐</span>
+                        <span class="button-instruction">(in coming versions)</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">🔐</span>
+                            <span class="heart-icon">👤</span>
+                            <span class="heart-icon">⚙️</span>
+                        </div>
+                    </a>
+                    
+                    <a href="{% url 'intro' %}" class="beautiful-button intro-button">
+                        <span class="button-text">Back To Intro↩️</span>
+                        <span class="button-instruction">Return to intro</span>
+                        <div class="button-hearts">
+                            <span class="heart-icon">↩️</span>
+                            <span class="heart-icon">🏠</span>
+                            <span class="heart-icon">💫</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="decorative-flowers">
+                <div class="flower-left">🌺</div>
+                <div class="flower-right">🌹</div>
+                <div class="flower-bottom-left">🌷</div>
+                <div class="flower-bottom-right">🌼</div>
+                <div class="flower-top-center">🌸</div>
+                <div class="flower-middle-left">🌻</div>
+                <div class="flower-middle-right">🌺</div>
+                <div class="butterfly-left">🦋</div>
+                <div class="butterfly-right">🦋</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/landing.js' %}"></script>
 </body>
 </html>

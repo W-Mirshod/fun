@@ -1,4 +1,3 @@
-from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
@@ -23,13 +22,6 @@ class RequestsLog(models.Model):
             return f"{self.ip_address}"
 
 
-class CustomUser(AbstractUser):
-    username = models.CharField(max_length=255, unique=True)
-    password = models.CharField(max_length=255)
-
-    USERNAME_FIELD = 'username'
-
-
 class Intro(models.Model):
     title = models.CharField(max_length=75, unique=True)
     slug = models.SlugField(max_length=75, blank=True)
@@ -49,24 +41,6 @@ class Intro(models.Model):
         return f"{self.id}. {self.title}"
 
 
-class Rates(models.Model):
-    rating = models.ForeignKey(Intro, on_delete=models.CASCADE, related_name="ratings")
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name="rates")
-    rate = models.CharField(max_length=75)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        verbose_name_plural = "Ratings"
-
-
-class Contacting(models.Model):
-    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    body = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        verbose_name_plural = "Contacting"
 
 
 class Versions(models.Model):

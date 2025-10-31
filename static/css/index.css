@@ -283,7 +283,7 @@ button {
 }
 
 .e-nav__link:after {
-  content: "Starting ORANGE 2.0";
+  content: var(--main-character-text);
 }
 
 .e-nav__link:hover:before {

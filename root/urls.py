@@ -16,11 +16,22 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
+from django.shortcuts import redirect
+from django.views.generic import TemplateView
 
 from root import settings
 
+def auth_redirect_all(request):
+    """Redirect any auth/* URLs to home page"""
+    return redirect('/')
+
+# Custom 404 handler
+handler404 = lambda request, exception=None: TemplateView.as_view(template_name='notfound.html')(request)
+
 urlpatterns = [
                   path('admin-page/', admin.site.urls),
+                  # Catch auth URLs at root level too
+                  re_path(r'^auth/.*', auth_redirect_all),
                   path('', include('main.urls'))
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  # + debug_toolbar_urls()

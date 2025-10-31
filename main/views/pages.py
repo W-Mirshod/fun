@@ -1,50 +1,15 @@
 from datetime import datetime
 
-from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from user_agents import parse
 
-from main.forms import ContactingForm
-from main.models import RequestsLog, Intro, Rates, Contacting, Versions
-from root.settings import DEFAULT_FROM_EMAIL
+from main.models import RequestsLog, Versions
 
 
 def home_page(request):
     if request.method == 'GET':
         send_sms(request, 'Home Page')
         return render(request, 'index.html')
-
-
-def rate_page(request, slug):
-    if request.method == 'GET':
-        send_sms(request, 'Rate Page')
-
-        rate_number = request.GET.get('rating')
-        rating = get_object_or_404(Intro, slug=slug)
-        rate = Rates.objects.filter(rating=rating, user=request.user)
-
-        word = "Refresh"
-        if rate:
-            rate = get_object_or_404(Rates, rating=rating, user=request.user)
-            if rate.rate:
-                if rate.rate == '1':
-                    word = 'Terrible'
-                elif rate.rate == '2':
-                    word = 'Bad'
-                elif rate.rate == '3':
-                    word = 'Okay'
-                elif rate.rate == '4':
-                    word = 'Good'
-                elif rate.rate == '5':
-                    word = 'Perfect'
-
-        if not rate and rate_number:
-            rate = Rates.objects.create(rate=rate_number, rating=rating, user=request.user)
-
-        context = {'rate': rate,
-                   'word': word}
-
-        return render(request, 'rate_style.html', context)
 
 
 def intro_page(request):
@@ -75,16 +40,6 @@ def solar_system_page(request):
     if request.method == 'GET':
         send_sms(request, 'Solar System Page')
         return render(request, 'universe_index.html')
-
-
-def ratings_page(request):
-    if request.method == 'GET':
-        ratings = Intro.objects.all()
-
-        send_sms(request, 'Ratings Page')
-
-        context = {'ratings': ratings}
-        return render(request, 'ratings_style.html', context)
 
 
 def alerting(request):
@@ -210,24 +165,18 @@ def secret_room(request):
 
 def statics(request):
     if request.method == 'GET':
-        five_st = Rates.objects.filter(rate=5, user_id=request.user.id).count()
-        four_st = Rates.objects.filter(rate=4, user_id=request.user.id).count()
-        three_st = Rates.objects.filter(rate=3, user_id=request.user.id).count()
-        two_st = Rates.objects.filter(rate=2, user_id=request.user.id).count()
-        one_st = Rates.objects.filter(rate=1, user_id=request.user.id).count()
-
-        all_rated = 28
-        not_rated = all_rated - (five_st + four_st + three_st + two_st + one_st)
-
         send_sms(request, 'Statics Page')
-
-        context = {'five_st': five_st,
-                   'four_st': four_st,
-                   'three_st': three_st,
-                   'two_st': two_st,
-                   'one_st': one_st,
-                   'all_rated': all_rated,
-                   'not_rated': not_rated, }
+        
+        # Stats page without authentication dependencies
+        context = {
+            'five_st': 0,
+            'four_st': 0,
+            'three_st': 0,
+            'two_st': 0,
+            'one_st': 0,
+            'all_rated': 28,
+            'not_rated': 28,
+        }
 
         return render(request, 'statics.html', context)
 
@@ -242,58 +191,19 @@ def timeline(request):
         return render(request, 'timeline.html', context)
 
 
-def submit_rating(request):
-    if request.method == 'GET':
-        send_sms(request, 'Submit Rating Page')
-        return render(request, 'rate_style.html')
-
-    if request.method == 'POST':
-        rating = request.POST['rating']
-        rating_obj = Intro(rating=rating)
-        rating_obj.save()
-
-        return render(request, 'rate_style.html')
-
-
-def contacting(request):
-    if request.method == 'GET':
-        send_sms(request, 'Contacting Page')
-        form = ContactingForm(request.GET)
-
-        return render(request, 'contacting.html', {'form': form})
-    if request.method == 'POST':
-        form = ContactingForm(request.POST)
-
-        if form.is_valid():
-            if request.user.is_authenticated:
-                Contacting.objects.create(user=request.user, body=form.cleaned_data['body'])
-
-                request.session['messages'] = "Thanks for your contribution)"
-
-                messages = request.session.pop('messages', None)
-
-                send_mail(subject=f'Contacting From {os.environ.get("main_character", "Orange")} {request.user}',
-                          message=form.cleaned_data['body'],
-                          from_email=DEFAULT_FROM_EMAIL,
-                          recipient_list=['trading3526@gmail.com'],
-                          fail_silently=False)
-
-                context = {'messages': messages}
-                return render(request, 'intro_script.html', context)
-
-            else:
-                print("Why ain't u authenticated??")
-
-        return render(request, 'contacting.html', {'form': form})
 
 
 def send_sms(entered_request, in_url):
     # Get the user's IP address
     x_forwarded_for = entered_request.META.get('HTTP_X_FORWARDED_FOR')
     if x_forwarded_for:
-        ip_address = x_forwarded_for.split(',')[0]
+        ip_address = x_forwarded_for.split(',')[0].strip()
     else:
         ip_address = entered_request.META.get('REMOTE_ADDR')
+
+    # Default to localhost if IP address is not available
+    if not ip_address:
+        ip_address = '127.0.0.1'
 
     # Get user agent string and parse it
     user_agent_string = entered_request.META.get('HTTP_USER_AGENT', '')
