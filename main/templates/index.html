@@ -1,19 +1,25 @@
+{% extends 'base.html' %}
 {% load static %}
 
+{% block title %}For {{ main_character }} - Shaknoze Portal{% endblock %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For {{ main_character }}</title>
+{% block description %}Welcome to an enchanting interactive experience created specially for {{ main_character }}. Discover magical portals, animations, and visual effects in this immersive web journey.{% endblock %}
+
+{% block og_title %}For {{ main_character }} - Shaknoze Portal{% endblock %}
+
+{% block og_description %}Welcome to an enchanting interactive experience created specially for {{ main_character }}. Discover magical portals, animations, and visual effects in this immersive web journey.{% endblock %}
+
+{% block twitter_title %}For {{ main_character }} - Shaknoze Portal{% endblock %}
+
+{% block twitter_description %}Welcome to an enchanting interactive experience created specially for {{ main_character }}. Discover magical portals, animations, and visual effects in this immersive web journey.{% endblock %}
+
+{% block extra_head %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
         :root {
             --main-character-text: "Starting {{ main_character }}";
         }
-        
+
         .alert {
             padding: 15px;
             margin: 20px 0;
@@ -27,8 +33,9 @@
             border-color: #c3e6cb;
         }
     </style>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
 <div class="container">
     {% if messages %}
         {% for message in messages %}
@@ -74,6 +81,9 @@
     </section>
 </a>
 
+{% endblock %}
+
+{% block extra_scripts %}
 <script>
     // Hide the message after 5 seconds
     setTimeout(function () {
@@ -87,6 +97,4 @@
         }
     }, 2500);  // 5000 milliseconds = 5 seconds
 </script>
-
-</body>
-</html>
+{% endblock %}

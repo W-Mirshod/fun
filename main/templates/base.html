@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>{% block title %}Shaknoze Portal - Interactive 3D Experience{% endblock %}</title>
+    <meta name="description" content="{% block description %}Experience immersive 3D portals, magical animations, and interactive visual effects in this enchanting web journey created for {{ main_character }}.{% endblock %}">
+    <link rel="canonical" href="{% block canonical_url %}{{ request.build_absolute_uri }}{% endblock %}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Shaknoze Portal - Interactive 3D Experience{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Experience immersive 3D portals, magical animations, and interactive visual effects in this enchanting web journey created for {{ main_character }}.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'image/shaknoze_preview_1200x630.png' %}{% endblock %}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Shaknoze Portal - Interactive 3D Experience Preview">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:site_name" content="Shaknoze Portal">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{% block twitter_url %}{{ request.build_absolute_uri }}{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}Shaknoze Portal - Interactive 3D Experience{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}Experience immersive 3D portals, magical animations, and interactive visual effects in this enchanting web journey created for {{ main_character }}.{% endblock %}">
+    <meta name="twitter:image" content="{% block twitter_image %}{{ request.scheme }}://{{ request.get_host }}{% static 'image/shaknoze_preview_1200x630.png' %}{% endblock %}">
+    <meta name="twitter:image:alt" content="Shaknoze Portal - Interactive 3D Experience Preview">
+
+    <!-- Telegram specific -->
+    <meta name="telegram:site_name" content="Shaknoze Portal">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
+
+    <!-- Additional head content -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+
+    {% block extra_scripts %}{% endblock %}
+</body>
+</html>
