@@ -272,7 +272,7 @@ def contacting(request):
 
                 messages = request.session.pop('messages', None)
 
-                send_mail(subject=f'Contacting From Orange {request.user}',
+                send_mail(subject=f'Contacting From {os.environ.get("main_character", "Orange")} {request.user}',
                           message=form.cleaned_data['body'],
                           from_email=DEFAULT_FROM_EMAIL,
                           recipient_list=['trading3526@gmail.com'],

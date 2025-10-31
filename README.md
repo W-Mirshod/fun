@@ -1,4 +1,4 @@
-# Orange Portal Project
+# Ш Portal Project
 
 A Django-based web application featuring interactive 3D portals, animations, and visual effects.
 
@@ -16,7 +16,7 @@ This project creates an immersive web experience with 3D portals and animations.
 ## Docker Setup
 1. Clone the repository:
 ```
-git clone https://github.com/W-Mirshod/orange.git
+git clone https://github.com/W-Mirshod/Ш.git
 ```
 
 2. Build and run with Docker:

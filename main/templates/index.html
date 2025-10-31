@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Orange</title>
+    <title>For {{ main_character }}</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/135/135620.png">
     <style>
@@ -60,7 +60,7 @@
     <section class="error">
         <div class="error__content">
             <div class="error__message message">
-                <h1 class="message__title">ORANGE 2.0</h1>
+                <h1 class="message__title">{{ main_character }} 2.0</h1>
                 <p class="message__text">Press To Continue</p>
             </div>
             <div class="error__nav e-nav">

@@ -13,7 +13,7 @@
 
 <section class="intro">
     <div class="container">
-        <h1>Orange Website's Timeline &darr;</h1>
+        <h1>{{ main_character }} Website's Timeline &darr;</h1>
         <p>Back to <a href="{% url 'intro' %}" target="_parent">Intro Page</a></p>
     </div>
 </section>
@@ -38,7 +38,7 @@
     <span>versions of </span>
     <a>
         <img width="24" height="24" src="https://cdn-icons-png.flaticon.com/512/135/135620.png"
-             alt="Orange logo">
+             alt="{{ main_character }} logo">
     </a>
 </footer>
 <script src="{% static 'js/timeline.js' %}"></script>
