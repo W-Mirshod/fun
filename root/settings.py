@@ -24,6 +24,12 @@ SECRET_KEY = 'django-insecure-i-69851(r$7lp_9*3-7e*ysgjt(&8!gk%cfsxb_t1uw!*o1x!*
 DEBUG = True
 ALLOWED_HOSTS = ['*']
 
+# CSRF trusted origins for HTTPS sites
+CSRF_TRUSTED_ORIGINS = [
+    'https://for-her.w-mirshod.com',
+    'https://*.w-mirshod.com',  # Allow subdomains too
+]
+
 INTERNAL_IPS = ('127.0.0.1', '192.168.0.1',)
 DEBUG_TOOLBAR_CONFIG = {'INTERCEPT_REDIRECTS': False, }
 
@@ -87,7 +93,7 @@ WSGI_APPLICATION = 'root.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': BASE_DIR / 'db' / 'db.sqlite3',
     }
 }
 

@@ -11,8 +11,10 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 COPY . .
 
-RUN python manage.py makemigrations main && \
+RUN mkdir -p db && \
+    python manage.py makemigrations main && \
     python manage.py migrate && \
+    python manage.py create_default_superuser && \
     python manage.py collectstatic --noinput
 
 EXPOSE 1407
