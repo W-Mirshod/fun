@@ -31,8 +31,6 @@ ENV/
 .Trashes
 ehthumbs.db
 Thumbs.db
-db.sqlite3
-db.sqlite3-journal
 local_settings.py
 
 # Static files
