@@ -3,8 +3,9 @@ version: '3.8'
 services:
   web:
     build: .
-    ports:
-      - "1407:1407"
+    container_name: fun-web-1
+    expose:
+      - "1407"
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONDONTWRITEBYTECODE=1
@@ -13,7 +14,13 @@ services:
       - static_files:/app/staticfiles
       - db_data:/app/db
     command: gunicorn --bind 0.0.0.0:1407 root.wsgi:application --workers 3
+    networks:
+      - web
 
 volumes:
   db_data:
   static_files:
+
+networks:
+  web:
+    external: true
